@@ -46,6 +46,10 @@ https://github.com/tvk-group/AlviKRON/raw/main/assets/brand/icon-32.svg
 | `assets/brand/logo-full.svg` | Vector wordmark |
 | `assets/brand/logo-full.png` | Social / OG image |
 
+## Agent skills
+
+UI/design skills for Cursor agents live in [`.agents/skills/`](.agents/skills/) (see [`.agents/README.md`](.agents/README.md)). Installed from taste-skill, Anthropic frontend-design, design-motion-principles, impeccable, and ui-ux-pro-max-skill.
+
 ## Deploy
 
 Static site — deploy to Vercel or any static host. `vercel.json` included.
