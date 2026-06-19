@@ -31,6 +31,21 @@ Mirrors the [eKRON](https://github.com/tvk-group/eKRON) site architecture:
 - SEO: robots.txt, sitemap.xml, hreflang, JSON-LD, 10 FAQs
 - Mobile navigation
 
+## Brand assets
+
+Official logos live in [`assets/brand/`](assets/brand/README.md).
+
+**32×32 SVG icon (direct download):**
+
+https://github.com/tvk-group/AlviKRON/raw/main/assets/brand/icon-32.svg
+
+| File | Purpose |
+|------|---------|
+| `assets/brand/icon-32.svg` | Favicon, BaseScan token icon, wallets |
+| `assets/brand/icon.svg` | Navbar / UI |
+| `assets/brand/logo-full.svg` | Vector wordmark |
+| `assets/brand/logo-full.png` | Social / OG image |
+
 ## Deploy
 
 Static site — deploy to Vercel or any static host. `vercel.json` included.

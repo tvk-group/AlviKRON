@@ -66,14 +66,9 @@ header {
   font-weight:900; letter-spacing:-.04em; font-size:1.16rem; color:#fff;
 }
 .brand-mark {
-  width:46px; height:46px; border-radius:17px; position:relative;
-  background:conic-gradient(from 180deg,var(--gold),var(--orange),var(--violet),var(--cyan),var(--gold));
+  width:46px; height:46px; border-radius:17px; display:block; flex-shrink:0;
+  object-fit:cover;
   box-shadow:0 16px 42px rgba(244,114,182,.24);
-}
-.brand-mark::before {
-  content:"aK"; position:absolute; inset:8px; border-radius:12px;
-  display:grid; place-items:center; color:#3b0764; font-weight:900;
-  background:rgba(253,242,248,.92); letter-spacing:-.08em;
 }
 nav.main-nav {
   display:flex; align-items:center; gap:16px;
@@ -206,31 +201,16 @@ h1 { margin:24px 0 18px; font-size:clamp(3.3rem, 9vw, 8rem); line-height:.84; le
     linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
   background-size:34px 34px; mask-image:radial-gradient(circle at center, black, transparent 76%);
 }
-.coin-orb {
-  position:absolute; left:50%; top:34%; width:280px; height:280px;
-  transform:translate(-50%,-50%); border-radius:999px;
-  background:
-    radial-gradient(circle, rgba(255,255,255,.18) 0 18%, transparent 19%),
-    conic-gradient(from 0deg, rgba(244,114,182,.36), rgba(251,113,133,.28), rgba(124,58,237,.22), rgba(6,182,212,.15), rgba(244,114,182,.36));
-  box-shadow:0 28px 90px rgba(244,114,182,.12); z-index:1;
+.coin-logo {
+  position:absolute; left:50%; top:34%; width:min(280px, 72%); height:auto;
+  transform:translate(-50%,-50%); z-index:1;
+  filter:drop-shadow(0 28px 90px rgba(244,114,182,.22));
   animation:pulseOrb 5s ease-in-out infinite;
 }
 @keyframes pulseOrb {
   0%,100% { transform:translate(-50%,-50%) scale(1); }
   50% { transform:translate(-50%,-50%) scale(1.035); }
 }
-.coin-orb::before {
-  content:""; position:absolute; inset:36px; border-radius:999px;
-  border:2px dashed rgba(244,114,182,.44); animation:rotate 18s linear infinite;
-}
-.coin-orb::after {
-  content:"alviKRON"; position:absolute; left:50%; top:50%; width:150px; height:150px;
-  transform:translate(-50%,-50%); border-radius:999px; display:grid; place-items:center;
-  color:#3b0764; font-weight:1000; letter-spacing:-.08em; font-size:.82rem;
-  background:linear-gradient(135deg,var(--gold),#fce7f3,var(--orange));
-  box-shadow:0 24px 60px rgba(244,114,182,.25);
-}
-@keyframes rotate { to { transform:rotate(360deg); } }
 .float-chip {
   position:absolute; z-index:4; padding:10px 13px; border-radius:999px;
   background:rgba(255,255,255,.10); border:1px solid var(--line); color:var(--muted);
@@ -775,7 +755,7 @@ body.rtl .addr-actions { justify-content:flex-end; }
   .trust-strip { grid-template-columns:1fr; }
   .btn { width:100%; }
   .coin-card { min-height:480px; }
-  .coin-orb { width:220px; height:220px; top:32%; }
+  .coin-logo { width:min(220px, 68%); top:32%; }
   .chip2 { top:82px; right:22px; }
   .chip3 { bottom:170px; }
   .verify-kv { grid-template-columns:1fr; }
@@ -819,7 +799,7 @@ body.consent-locked { overflow:hidden; }
   display:flex; align-items:center; gap:12px; margin-bottom:18px;
   font-weight:900; letter-spacing:-.04em; font-size:1.1rem; color:#fff;
 }
-.consent-brand .brand-mark { width:40px; height:40px; border-radius:14px; }
+.consent-brand .brand-mark { width:40px; height:40px; border-radius:14px; object-fit:cover; }
 .consent-kicker {
   margin:0 0 8px; color:var(--gold); text-transform:uppercase;
   letter-spacing:.14em; font-size:.76rem; font-weight:950;
