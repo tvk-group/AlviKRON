@@ -39,6 +39,15 @@ build/Release
 
 # Dependency directories
 node_modules/
+program/node_modules/
+program/verify-v2/node_modules/
+program/verify-v2/cache/
+program/verify-v2/artifacts/
+program/cache/
+program/artifacts/
+program/typechain-types/
+program/coverage/
+program/.env
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)

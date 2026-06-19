@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ALVIKRON Legal – Terms of Use</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Terms of Use for ALVIKRON experimental memecoin website." />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#020617;color:#e5e7eb;}
+    a{color:#fbbf24;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 6vw 56px;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;}
+    .brand{font-weight:800;letter-spacing:.08em;color:#fbbf24}
+    .nav a{margin-left:14px;color:#e5e7eb;font-size:.95rem}
+    .card{background:#020617;border:1px solid #1f2937;border-radius:16px;box-shadow:0 18px 40px rgba(15,23,42,.9);padding:18px;}
+    .title{font-size:.9rem;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin:0 0 10px}
+    h1{margin:0 0 10px;font-size:1.55rem}
+    .meta{color:#9ca3af;font-size:.9rem;margin-bottom:14px}
+    select{background:#0b1222;color:#e5e7eb;border:1px solid #1f2937;border-radius:999px;padding:8px 12px}
+    .note{color:#9ca3af;font-size:.92rem;line-height:1.55}
+    .content{margin-top:14px;line-height:1.65;color:#e5e7eb}
+    .content h2{font-size:1.05rem;margin:18px 0 8px;color:#f3f4f6}
+    .content ul{margin:8px 0 12px 18px}
+    footer{margin-top:18px;color:#6b7280;font-size:.85rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    code{background:#0b1222;border:1px solid #1f2937;border-radius:8px;padding:2px 6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">ALVIKRON • Legal</div>
+      <div class="nav">
+        <a href="../index.html">Home</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./risk.html">Risk</a>
+        <a href="https://www.tvk.group" target="_blank" rel="noopener">TVK Group</a>
+      </div>
+    </header>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+        <div>
+          <div class="title">Terms of Use</div>
+          <h1>Terms of Use – ALVIKRON Website</h1>
+          <div class="meta">Last updated: 14 Dec 2025 • Official (binding) language: English</div>
+        </div>
+        <div>
+          <label class="meta" for="lang">Language</label><br/>
+          <select id="lang">
+            <option value="en" selected>English (Official)</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="tr">Türkçe</option>
+            <option value="ru">Русский</option>
+            <option value="es">Español</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="note">
+        This website provides general information about the experimental token <b>ALVIKRON</b>.
+        It does not provide financial, legal, tax, or investment advice. If a translation differs from English,
+        the <b>English version controls</b>.
+      </p>
+
+      <div id="content" class="content"></div>
+
+      <footer>
+        <span>© ALVIKRON • Experimental memecoin</span>
+        <span>Contact: <a href="mailto:team@alvikron.com">team@alvikron.com</a></span>
+      </footer>
+    </div>
+  </div>
+
+<script>
+const T = {
+  en: `
+    <h2>1. Acceptance</h2>
+    <p>By accessing or using this website, you agree to these Terms of Use. If you do not agree, do not use the site.</p>
+
+    <h2>2. No advice</h2>
+    <p>Content on this website is for informational purposes only. Nothing on this website constitutes financial, investment, legal, tax, or trading advice.</p>
+
+    <h2>3. Experimental token</h2>
+    <p>ALVIKRON is an experimental memecoin. It does not represent equity, ownership, securities, or any investment contract.</p>
+
+    <h2>4. No guarantees</h2>
+    <p>We make no guarantees regarding availability, correctness, market value, liquidity, listings, or future development.</p>
+
+    <h2>5. Third-party links</h2>
+    <p>This website may link to third-party services (e.g., block explorers). We do not control or endorse third-party content and are not responsible for it.</p>
+
+    <h2>6. User responsibility</h2>
+    <p>You are solely responsible for any actions you take. Always verify contract addresses on an official block explorer before interacting with any token.</p>
+
+    <h2>7. Intellectual property</h2>
+    <p>All brand names, text, and visual materials on this site belong to their respective owners. No rights are granted except as required to use the site.</p>
+
+    <h2>8. Changes</h2>
+    <p>We may update these Terms at any time. Continued use means you accept the updated Terms.</p>
+
+    <h2>9. Contact</h2>
+    <p>Questions: <a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  de: `
+    <h2>1. Zustimmung</h2>
+    <p>Durch den Zugriff auf diese Website stimmen Sie diesen Nutzungsbedingungen zu. Wenn Sie nicht zustimmen, nutzen Sie die Website nicht.</p>
+
+    <h2>2. Keine Beratung</h2>
+    <p>Alle Inhalte dienen nur der Information und stellen keine Finanz-, Anlage-, Rechts-, Steuer- oder Handelsberatung dar.</p>
+
+    <h2>3. Experimenteller Token</h2>
+    <p>ALVIKRON ist ein experimenteller Memecoin und stellt kein Eigentum, keine Aktien, keine Wertpapiere und keinen Investmentvertrag dar.</p>
+
+    <h2>4. Keine Garantien</h2>
+    <p>Es gibt keine Garantien hinsichtlich Verfügbarkeit, Richtigkeit, Marktwert, Liquidität, Listings oder zukünftiger Entwicklung.</p>
+
+    <h2>5. Drittanbieter-Links</h2>
+    <p>Links zu Drittanbietern (z. B. Block-Explorer) liegen außerhalb unserer Kontrolle. Wir übernehmen keine Verantwortung für deren Inhalte.</p>
+
+    <h2>6. Eigenverantwortung</h2>
+    <p>Sie handeln auf eigene Verantwortung. Verifizieren Sie immer Contract-Adressen auf offiziellen Block-Explorern.</p>
+
+    <h2>7. Geistiges Eigentum</h2>
+    <p>Marken, Texte und Designs gehören den jeweiligen Inhabern. Es werden keine Rechte übertragen.</p>
+
+    <h2>8. Änderungen</h2>
+    <p>Wir können diese Bedingungen jederzeit aktualisieren. Die weitere Nutzung gilt als Zustimmung.</p>
+
+    <h2>9. Kontakt</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  fr: `
+    <h2>1. Acceptation</h2>
+    <p>En accédant à ce site, vous acceptez ces conditions. Si vous n’êtes pas d’accord, n’utilisez pas le site.</p>
+
+    <h2>2. Pas de conseil</h2>
+    <p>Les informations fournies ne constituent pas un conseil financier, juridique, fiscal, d’investissement ou de trading.</p>
+
+    <h2>3. Jeton expérimental</h2>
+    <p>ALVIKRON est un memecoin expérimental. Il ne représente ni actions, ni propriété, ni titres, ni contrat d’investissement.</p>
+
+    <h2>4. Aucune garantie</h2>
+    <p>Aucune garantie concernant la disponibilité, l’exactitude, la valeur, la liquidité, les listings ou le développement futur.</p>
+
+    <h2>5. Liens tiers</h2>
+    <p>Les liens vers des services tiers ne sont pas sous notre contrôle. Nous ne sommes pas responsables de leur contenu.</p>
+
+    <h2>6. Responsabilité</h2>
+    <p>Vous êtes seul responsable de vos actions. Vérifiez toujours les adresses de contrat sur un explorateur officiel.</p>
+
+    <h2>7. Propriété intellectuelle</h2>
+    <p>Les marques et contenus appartiennent à leurs propriétaires respectifs. Aucun droit n’est accordé au-delà de l’usage du site.</p>
+
+    <h2>8. Modifications</h2>
+    <p>Nous pouvons modifier ces conditions à tout moment. Continuer à utiliser le site signifie accepter les modifications.</p>
+
+    <h2>9. Contact</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  tr: `
+    <h2>1. Kabul</h2>
+    <p>Bu siteye erişerek bu Kullanım Şartlarını kabul edersiniz. Kabul etmiyorsanız siteyi kullanmayın.</p>
+
+    <h2>2. Danışmanlık değildir</h2>
+    <p>Bu sitedeki içerik; finansal, yatırım, hukuki, vergisel veya al-sat danışmanlığı değildir.</p>
+
+    <h2>3. Deneysel token</h2>
+    <p>ALVIKRON deneysel bir memecoin’dir. Hisse, mülkiyet, menkul kıymet veya yatırım sözleşmesi niteliği taşımaz.</p>
+
+    <h2>4. Garanti yok</h2>
+    <p>Erişilebilirlik, doğruluk, değer, likidite, listeleme veya gelecek geliştirmeler hakkında hiçbir garanti verilmez.</p>
+
+    <h2>5. Üçüncü taraf bağlantıları</h2>
+    <p>Block explorer vb. üçüncü taraf bağlantıları bizim kontrolümüzde değildir; içeriklerinden sorumlu değiliz.</p>
+
+    <h2>6. Sorumluluk kullanıcıdadır</h2>
+    <p>Tüm işlemler kendi sorumluluğunuzdadır. Contract adreslerini resmi explorer üzerinden her zaman doğrulayın.</p>
+
+    <h2>7. Fikri mülkiyet</h2>
+    <p>Markalar ve içerikler ilgili sahiplerine aittir. Siteyi kullanmak dışında bir hak devri yoktur.</p>
+
+    <h2>8. Değişiklikler</h2>
+    <p>Şartlar güncellenebilir. Siteyi kullanmaya devam etmek güncellemeleri kabul ettiğiniz anlamına gelir.</p>
+
+    <h2>9. İletişim</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  ru: `
+    <h2>1. Принятие</h2>
+    <p>Используя сайт, вы принимаете эти условия. Если вы не согласны — не используйте сайт.</p>
+
+    <h2>2. Не является советом</h2>
+    <p>Информация на сайте не является финансовой, инвестиционной, юридической, налоговой или торговой консультацией.</p>
+
+    <h2>3. Экспериментальный токен</h2>
+    <p>ALVIKRON — экспериментальный мемкоин и не представляет собой акции, собственность, ценные бумаги или инвестиционный контракт.</p>
+
+    <h2>4. Нет гарантий</h2>
+    <p>Нет гарантий доступности, точности, стоимости, ликвидности, листингов или будущей разработки.</p>
+
+    <h2>5. Ссылки на третьи стороны</h2>
+    <p>Ссылки на сторонние сервисы (например, обозреватели блокчейна) не контролируются нами. Мы не отвечаем за их контент.</p>
+
+    <h2>6. Ответственность пользователя</h2>
+    <p>Вы действуете на свой риск. Всегда проверяйте адреса контрактов через официальный обозреватель.</p>
+
+    <h2>7. Интеллектуальная собственность</h2>
+    <p>Бренды и материалы принадлежат их владельцам. Права не передаются.</p>
+
+    <h2>8. Изменения</h2>
+    <p>Мы можем обновлять условия. Продолжение использования означает согласие.</p>
+
+    <h2>9. Контакт</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  es: `
+    <h2>1. Aceptación</h2>
+    <p>Al usar este sitio aceptas estas condiciones. Si no estás de acuerdo, no lo utilices.</p>
+
+    <h2>2. Sin asesoramiento</h2>
+    <p>El contenido es informativo y no constituye asesoramiento financiero, legal, fiscal, de inversión ni de trading.</p>
+
+    <h2>3. Token experimental</h2>
+    <p>ALVIKRON es un memecoin experimental y no representa acciones, propiedad, valores ni contrato de inversión.</p>
+
+    <h2>4. Sin garantías</h2>
+    <p>No garantizamos disponibilidad, exactitud, valor, liquidez, listados ni desarrollo futuro.</p>
+
+    <h2>5. Enlaces de terceros</h2>
+    <p>Los enlaces a terceros no están bajo nuestro control y no somos responsables de su contenido.</p>
+
+    <h2>6. Responsabilidad del usuario</h2>
+    <p>Eres responsable de tus acciones. Verifica siempre las direcciones de contrato en un explorador oficial.</p>
+
+    <h2>7. Propiedad intelectual</h2>
+    <p>Las marcas y contenidos pertenecen a sus respectivos propietarios. No se conceden derechos adicionales.</p>
+
+    <h2>8. Cambios</h2>
+    <p>Podemos actualizar estas condiciones. El uso continuo implica aceptación.</p>
+
+    <h2>9. Contacto</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  ja: `
+    <h2>1. 同意</h2>
+    <p>本サイトを利用することで、本利用規約に同意したものとみなします。同意できない場合は利用しないでください。</p>
+
+    <h2>2. 助言ではありません</h2>
+    <p>本サイトの内容は情報提供のみであり、金融・投資・法務・税務・取引の助言ではありません。</p>
+
+    <h2>3. 実験的トークン</h2>
+    <p>ALVIKRON は実験的なミームコインであり、株式・所有権・有価証券・投資契約を意味しません。</p>
+
+    <h2>4. 保証なし</h2>
+    <p>可用性、正確性、価値、流動性、上場、将来の開発について保証しません。</p>
+
+    <h2>5. 外部リンク</h2>
+    <p>外部サービス（ブロックエクスプローラ等）は当方の管理外であり、その内容について責任を負いません。</p>
+
+    <h2>6. 利用者責任</h2>
+    <p>すべて自己責任で行ってください。コントラクトアドレスは必ず公式エクスプローラで確認してください。</p>
+
+    <h2>7. 知的財産</h2>
+    <p>ブランドやコンテンツは各権利者に帰属します。追加の権利は付与されません。</p>
+
+    <h2>8. 変更</h2>
+    <p>本規約は更新される場合があります。継続利用は更新後の規約に同意したことを意味します。</p>
+
+    <h2>9. 連絡先</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  zh: `
+    <h2>1. 接受条款</h2>
+    <p>访问或使用本网站即表示您同意本条款。若不同意，请勿使用。</p>
+
+    <h2>2. 非建议</h2>
+    <p>本网站内容仅供信息参考，不构成任何金融、投资、法律、税务或交易建议。</p>
+
+    <h2>3. 实验性代币</h2>
+    <p>ALVIKRON 为实验性 Meme 币，不代表股权、所有权、证券或投资合同。</p>
+
+    <h2>4. 无保证</h2>
+    <p>我们不保证可用性、准确性、价值、流动性、上架或未来开发。</p>
+
+    <h2>5. 第三方链接</h2>
+    <p>第三方链接（如区块浏览器）不受我们控制，我们不对其内容负责。</p>
+
+    <h2>6. 用户责任</h2>
+    <p>您需自行承担风险。与代币交互前请务必在官方浏览器核对合约地址。</p>
+
+    <h2>7. 知识产权</h2>
+    <p>品牌与内容归其各自权利人所有。除使用网站所需外，不授予其他权利。</p>
+
+    <h2>8. 变更</h2>
+    <p>我们可随时更新条款。继续使用即表示接受更新。</p>
+
+    <h2>9. 联系方式</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `,
+  ar: `
+    <h2>1. القبول</h2>
+    <p>باستخدام هذا الموقع فإنك توافق على هذه الشروط. إذا لم توافق، فلا تستخدم الموقع.</p>
+
+    <h2>2. ليس نصيحة</h2>
+    <p>المحتوى لأغراض المعلومات فقط ولا يُعد نصيحة مالية أو استثمارية أو قانونية أو ضريبية أو تداول.</p>
+
+    <h2>3. رمز تجريبي</h2>
+    <p>ALVIKRON عملة ميم تجريبية ولا تمثل أسهماً أو ملكية أو أوراقاً مالية أو عقد استثمار.</p>
+
+    <h2>4. لا ضمانات</h2>
+    <p>لا توجد ضمانات بشأن التوفر أو الدقة أو القيمة أو السيولة أو الإدراج أو التطوير المستقبلي.</p>
+
+    <h2>5. روابط خارجية</h2>
+    <p>قد يحتوي الموقع على روابط لخدمات خارجية (مثل مستكشفات البلوكشين). لا نتحكم بها ولسنا مسؤولين عن محتواها.</p>
+
+    <h2>6. مسؤولية المستخدم</h2>
+    <p>أنت مسؤول عن أفعالك. تحقق دائماً من عناوين العقود عبر مستكشف رسمي قبل أي تفاعل.</p>
+
+    <h2>7. الملكية الفكرية</h2>
+    <p>العلامات والمحتوى مملوكة لأصحابها. لا يتم منح أي حقوق إضافية.</p>
+
+    <h2>8. التغييرات</h2>
+    <p>قد نقوم بتحديث هذه الشروط. استمرار الاستخدام يعني قبول التحديثات.</p>
+
+    <h2>9. تواصل</h2>
+    <p><a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+  `
+};
+
+const sel = document.getElementById('lang');
+const content = document.getElementById('content');
+function render(){
+  const k = sel.value;
+  content.innerHTML = T[k] || T.en;
+  document.documentElement.lang = k;
+  document.documentElement.dir = (k === 'ar') ? 'rtl' : 'ltr';
+}
+sel.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>
