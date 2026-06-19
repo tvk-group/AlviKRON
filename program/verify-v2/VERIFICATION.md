@@ -1,23 +1,26 @@
 # alviKRON V2 — BaseScan Contract Verification
 
-Official V2: `TBD` (Base)
+Official V2: `0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12` (Base)
 
 ## Why verification failed before
 
-BaseScan error `err_code_2` (bytecode mismatch) was caused by **wrong EVM version**:
+BaseScan error `err_code_2` (bytecode mismatch) was caused by uploading the **wrong contract source** — the eKRON verification bundle instead of alviKRON:
 
-| Setting | On-chain deploy | Previous package |
-|---------|-----------------|------------------|
+| Setting | On-chain deploy | Wrong upload (eKRON) |
+|---------|-----------------|----------------------|
+| Contract | `alviKRON` | `eKRON` |
+| Token name | `alviKRON` (8 chars) | `eKRON` (5 chars) |
+| Token symbol | `AKRON` | `EKRON` |
+| Genesis wallet | `0xaD521A7668D8843305f548DE553548160d9B79FE` | `0x44aaf729...` (eKRON) |
 | Compiler | `v0.8.20+commit.a1b79de6` | same |
 | Optimizer | 200 runs | same |
-| EVM version | **default (shanghai, uses PUSH0 `0x5f`)** | **paris (uses PUSH1 `0x60`)** |
-| OpenZeppelin | exact files at deploy time | npm 5.6.1 (different bytecode) |
+| EVM version | **default (shanghai)** | must match |
 
-Use **`basescan-standard-json-input.json`** — exact multi-file source pulled from Blockscout (already verified there).
+Use **`basescan-standard-json-input.json`** — contains `alviKRON.sol` with exact OpenZeppelin dependencies (already verified on Blockscout).
 
 ## BaseScan steps (use this file)
 
-1. Open [alviKRON V2 on BaseScan](https://basescan.org/address/TBD#code) → **Verify and Publish**
+1. Open [alviKRON V2 on BaseScan](https://basescan.org/address/0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12#code) → **Verify and Publish**
 2. **Compiler Type:** `Solidity (Standard-Json-Input)`
 3. **Compiler Version:** `v0.8.20+commit.a1b79de6`
 4. **Open Source License:** MIT
@@ -29,7 +32,7 @@ Use **`basescan-standard-json-input.json`** — exact multi-file source pulled f
 7. **Constructor Arguments (ABI-encoded):**
 
    ```
-   00000000000000000000000044aaf729c4cde67dfab7276ed9a1fad5c788fc43
+   000000000000000000000000ad521a7668d8843305f548de553548160d9b79fe
    ```
 
 8. Submit.
@@ -50,7 +53,7 @@ Expected output: `MATCH: creation bytecode + constructor args`
 
 ## Contract source (main file)
 
-`alviKRON.sol` — constructor takes `genesisWallet` = `0x44aaf729c4CDe67DFaB7276ED9A1fAd5C788FC43`
+`contracts/alviKRON.sol` — constructor takes `genesisWallet` = `0xaD521A7668D8843305f548DE553548160d9B79FE`
 
 ## After verification
 
