@@ -1,33 +1,34 @@
 /**
  * alviKRON — official on-chain registry (single source of truth)
- * Contract addresses TBD until fair-launch deployment on Base.
+ * Sourced from Base / BaseScan — contract 0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12
  */
 window.KRON_DATA = {
   token: {
     name: 'alviKRON',
-    symbol: 'ALVIKRON',
+    symbol: 'AKRON',
+    displaySymbol: 'ALVIKRON',
     network: 'Base',
     chainId: 8453,
     decimals: 18,
     totalSupply: '10,000,000,000',
-    deployed: null,
-    verified: false,
-    status: 'queued'
+    deployed: '2025-12-15',
+    verified: true,
+    status: 'live'
   },
   contract: {
     official: {
       labelKey: 'registry.contractOfficial',
-      address: 'TBD',
-      status: 'queued',
-      basescan: null,
-      blockscout: null
+      address: '0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12',
+      status: 'live',
+      basescan: 'https://basescan.org/token/0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12',
+      blockscout: 'https://base.blockscout.com/token/0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12'
     }
   },
   genesis: {
     labelKey: 'registry.genesis',
-    address: 'TBD',
-    basescan: null,
-    status: 'queued'
+    address: '0xaD521A7668D8843305f548DE553548160d9B79FE',
+    basescan: 'https://basescan.org/address/0xaD521A7668D8843305f548DE553548160d9B79FE',
+    status: 'live'
   },
   allocations: [
     {
@@ -35,36 +36,36 @@ window.KRON_DATA = {
       lockKey: 'registry.roleLpLock',
       pct: '80%',
       amount: '8,000,000,000',
-      address: 'TBD',
-      basescan: null,
-      status: 'queued'
+      address: '0x53F05e8c9fFb41646bBAD214802BC76a9447bbDc',
+      basescan: 'https://basescan.org/address/0x53F05e8c9fFb41646bBAD214802BC76a9447bbDc',
+      status: 'live'
     },
     {
       roleKey: 'registry.roleEco',
       lockKey: 'registry.roleEcoLock',
       pct: '10%',
       amount: '1,000,000,000',
-      address: 'TBD',
-      basescan: null,
-      status: 'queued'
+      address: '0x86c8b54c14d8C3E1e6f7A0525Ce80AFaF5F90AFF',
+      basescan: 'https://basescan.org/address/0x86c8b54c14d8C3E1e6f7A0525Ce80AFaF5F90AFF',
+      status: 'live'
     },
     {
       roleKey: 'registry.roleFounder6',
       lockKey: 'registry.roleFounder6Lock',
       pct: '5%',
       amount: '500,000,000',
-      address: 'TBD',
-      basescan: null,
-      status: 'queued'
+      address: '0x9305b794a55422A2f87b585C0c601c37F399489a',
+      basescan: 'https://basescan.org/address/0x9305b794a55422A2f87b585C0c601c37F399489a',
+      status: 'live'
     },
     {
       roleKey: 'registry.roleFounder12',
       lockKey: 'registry.roleFounder12Lock',
       pct: '5%',
       amount: '500,000,000',
-      address: 'TBD',
-      basescan: null,
-      status: 'queued'
+      address: '0x763A407E094ce35223dA2C58A567bBCc1C9677b7',
+      basescan: 'https://basescan.org/address/0x763A407E094ce35223dA2C58A567bBCc1C9677b7',
+      status: 'live'
     }
   ],
   familyTokens: [

@@ -68,7 +68,7 @@
     document.querySelectorAll('[data-address-registry]').forEach((el) => {
       const contract = DATA.contract.official;
       const genesis = DATA.genesis;
-      const symbol = DATA.token.symbol || 'ALVIKRON';
+      const symbol = DATA.token.symbol || 'AKRON';
       const isQueued = DATA.token.status === 'queued' || isTbd(contract.address);
 
       const rows = DATA.allocations.map((a) =>
@@ -111,7 +111,9 @@
             esc(t('registry.queuedNote')) +
             ' <a href="https://www.ekron.network/verify/" target="_blank" rel="noopener">' + esc(t('registry.ekronVerify')) + '</a>' +
             '</div>'
-          : '') +
+          : '<div style="padding:14px 24px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line)">' +
+            esc(t('registry.symbolNote')) +
+            '</div>') +
         '</div>';
     });
   }
