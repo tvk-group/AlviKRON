@@ -45,7 +45,7 @@
   },
   "registry": {
     "title": "On-Chain-Adressregister",
-    "desc": "Offizieller alviKRON-V2-Vertrag und Zuteilungs-Wallets auf Base. Vor dem Senden von Geldern immer hier verifizieren.",
+    "desc": "Official alviKRON contract and allocation wallets on Base. Always verify here before sending funds.",
     "badge": "✓ V2 verifiziert",
     "role": "Rolle",
     "allocation": "Zuteilung",
@@ -66,7 +66,8 @@
     "queued": "Queued",
     "queuedNote": "Contract and wallet addresses are TBD until alviKRON fair-launch deployment on Base. Verify eKRON (primary gateway) at",
     "ekronVerify": "www.ekron.network/verify",
-    "contractOfficial": "alviKRON (Official — TBD)"
+    "contractOfficial": "alviKRON (Official)",
+    "symbolNote": "On-chain ticker: AKRON · Display name: alviKRON. Verify balances on BaseScan before sending funds."
   },
   "home": {
     "pageTitle": "alviKRON — KRON Family Primary Memecoin | Fair Launch on Base",
@@ -74,11 +75,11 @@
     "subtitle": "Das Meme-Tor zur KRON Family und zum weiteren TVK / SOVRA / EnteleKron-Universum.",
     "lead": "alviKRON ist der primäre KRON-Family-Memecoin — ein experimenteller Community-Einstiegspunkt, der auf Kultur, Memes und transparenten Fair-Launch-Mechanismen basiert. Keine Investitionsversprechen.",
     "warning": "alviKRON ist ein hochriskanter experimenteller Memecoin. Kein garantierter Preis, keine Liquidität, kein Listing, keine Nutzenfunktion und keine Renditen. Nur zur Information — keine Finanzberatung.",
-    "tagVerified": "BaseScan verifiziert",
+    "tagVerified": "BaseScan Verified",
     "tagFairLaunch": "Nur Fair Launch",
     "tagNoPresale": "Kein Presale",
     "tagNoPrivate": "Kein Private Sale",
-    "btnBasescan": "Auf BaseScan ansehen",
+    "btnBasescan": "View on BaseScan",
     "btnVerify": "Verifizieren",
     "btnToken": "Token-Info",
     "btnProgram": "Launch-Programm",
@@ -86,8 +87,8 @@
     "chipFair": "Fair Launch",
     "chipNoPresale": "Kein Presale",
     "chipGenesis": "Genesis Asset",
-    "statusTitle": "alviKRON V2 · BaseScan verifiziert",
-    "statusDesc": "Offizieller Vertrag live auf Base. Vollständiges Adressregister on-chain und auf der Verifizierungsseite veröffentlicht.",
+    "statusTitle": "alviKRON · BaseScan Verified",
+    "statusDesc": "Official contract live on Base. Full address registry published on-chain and on the verification page.",
     "statTokens": "KRON Family Tokens",
     "statLp": "Fair-Launch-LP",
     "statSupply": "Feste Gesamtversorgung",
@@ -134,7 +135,7 @@
     "tokenAntiDump": "Anti-Dump: <strong>14-tägige Ankündigung</strong> vor Verkäufen gesperrter Zuteilungen · max. <strong>10% pro Ereignis</strong>. <a href=\"/verify/\">Vollständiges Adressregister</a> · <a href=\"/standard/\">Fair-Launch-Standard</a>",
     "onchainKicker": "On-Chain-Register",
     "onchainTitle": "Jede offizielle Adresse. An einem Ort.",
-    "onchainDesc": "Vertrag und Zuteilungs-Wallets für alviKRON V2 auf Base. Klicken Sie auf BaseScan, um Salden und Transfers zu verifizieren. Adressen nur von dieser Seite kopieren.",
+    "onchainDesc": "Contract and allocation wallets for alviKRON on Base. Click BaseScan to verify balances and transfers. Copy addresses only from this page.",
     "familyKicker": "KRON Family",
     "familyTitle": "Sieben Tokens. Nur Fair Launch.",
     "familyDesc": "Gestaffelter Rollout — alviKRON zuerst, thematische Satelliten, dann nachfragegesteuerte Spin-offs. Nie Presale. Nie ein gebündelter Familienverkauf.",
@@ -157,14 +158,16 @@
     "badgeDemandGated": "Nachfragegesteuert",
     "badgeLive": "Phase I",
     "badgeQueued": "Phase II",
-    "badgeGated": "Phase III"
+    "badgeGated": "Phase III",
+    "tokenContractVal": "0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12",
+    "tokenPhaseVal": "Phase II satellite · Live"
   },
   "verify": {
     "pageTitle": "alviKRON – Offizielle Verifizierung & On-Chain-Register",
     "brand": "alviKRON · Verifizieren",
     "pill": "Offizielle Verifizierung · Anti-Betrug · Base Network",
     "title": "Vor dem Senden verifizieren.",
-    "lead": "Official alviKRON contract addresses publish here after fair-launch deployment on Base. Only trust addresses in this registry and announcements on <strong>alvikron.com</strong>.",
+    "lead": "Official alviKRON is live on Base. Only trust addresses in this registry and announcements on <strong>alvikron.com</strong>.",
     "deprecated": "<strong>Veraltet V1 — nicht verwenden:</strong> <code>TBD</code> (falscher On-Chain-Name <code>eKron</code>). <a href=\"https://basescan.org/token/TBD\" target=\"_blank\" rel=\"noopener\">V1 auf BaseScan ansehen</a>",
     "factsTitle": "Token-Fakten",
     "policyTitle": "Anti-Dump-Richtlinie",
@@ -172,7 +175,8 @@
     "channelsTitle": "Offizielle Kanäle",
     "timelocks": "Wallet-Verwahrung (Richtlinien-Sperren)",
     "footer": "© 2026 alviKRON · Offizielle Verifizierung",
-    "queuedBanner": "<strong>Deployment queued:</strong> Contract and wallet addresses are <strong>TBD</strong> until alviKRON fair launch on Base. Verify the primary gateway at <a href=\"https://www.ekron.network/verify/\" target=\"_blank\" rel=\"noopener\">www.ekron.network/verify</a>."
+    "queuedBanner": "<strong>Deployment queued:</strong> Contract and wallet addresses are <strong>TBD</strong> until alviKRON fair launch on Base. Verify the primary gateway at <a href=\"https://www.ekron.network/verify/\" target=\"_blank\" rel=\"noopener\">www.ekron.network/verify</a>.",
+    "symbolBanner": "<strong>On-chain symbol:</strong> BaseScan lists the ERC-20 ticker as <code>AKRON</code> (name: alviKRON). Verify the contract address — not the symbol alone."
   },
   "contact": {
     "email": "team@alvikron.com",
@@ -180,9 +184,9 @@
   },
   "faq": {
     "q7": "What network is alviKRON on?",
-    "a7": "alviKRON V2 is deployed on Base (EVM), chain ID 8453. The official contract is verified on BaseScan. Always confirm you are on Base before interacting.",
+    "a7": "alviKRON is deployed on Base (EVM), chain ID 8453. The official contract is on BaseScan. Always confirm you are on Base before interacting.",
     "q8": "What is the official alviKRON contract address?",
-    "a8": "The official V2 contract is <a href=\"/verify/\">published on the verification page</a>: TBD. Do not use the deprecated V1 contract.",
+    "a8": "The official contract is <a href=\"/verify/\">published on the verification page</a>: <code>0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12</code>. On-chain symbol: AKRON.",
     "q9": "How do I contact the alviKRON team?",
     "a9": "Official project email: <a href=\"mailto:team@alvikron.com\">team@alvikron.com</a>. Only trust communications from official domains (alvikron.com) and verified channels.",
     "q10": "Is alviKRON financial advice or an investment?",
@@ -198,7 +202,7 @@
     "q5": "How do I verify the official contract?",
     "a5": "Only trust addresses on the <a href=\"/verify/\">official verification page</a> and announcements from official domains. If it is not verified there, assume it is not official.",
     "q6": "When will other KRON tokens launch?",
-    "a6": "Phase II satellites (soviKRON, mineKRON, alviKRON) launch staggered 2–4 months after alviKRON is credible. Phase III spin-offs launch only on organic community demand. No timeline guarantees."
+    "a6": "alviKRON deployed on Base on 15 Dec 2025 via fair launch. Other Phase II satellites (soviKRON, mineKRON) launch staggered after eKRON credibility. No timeline guarantees for siblings."
   },
   "consent": {
     "kicker": "Before you continue",
