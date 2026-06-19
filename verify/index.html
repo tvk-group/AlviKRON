@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>alviKRON – Official Verification & On-Chain Registry</title>
+  <meta name="description" content="Official alviKRON verification on Base. Contract and allocation addresses TBD until fair-launch deployment. Anti-scam registry at alvikron.com."/>
+  <link rel="canonical" href="https://www.alvikron.com/verify/" />
+  <meta property="og:title" content="alviKRON Official Verification" />
+  <meta property="og:url" content="https://www.alvikron.com/verify/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="/assets/css/kron.css" />
+</head>
+<body class="page-verify" data-i18n-page-title="verify.pageTitle">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="alviKRON home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span data-i18n="verify.brand">alviKRON · Verify</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/" data-i18n="common.home">Home</a>
+        <a href="/#onchain" data-i18n="nav.onchain">On-Chain</a>
+        <a href="/standard/" data-i18n="nav.standard">Standard</a>
+        <a href="/family/" data-i18n="nav.family">Family</a>
+        <a href="/program/" data-i18n="nav.program">Program</a>
+        <span class="nav-lang" data-lang-switcher></span>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu-inner">
+        <a href="/" data-i18n="common.home">Home</a>
+        <a href="/#onchain" data-i18n="nav.onchainRegistry">On-Chain Registry</a>
+        <a href="/standard/" data-i18n="nav.fairLaunchStandard">Fair Launch Standard</a>
+        <a href="/family/" data-i18n="nav.familyRoster">Family Roster</a>
+        <a href="/program/" data-i18n="nav.launchProgram">Launch Program</a>
+        <div data-lang-switcher style="margin-top:8px"></div>
+        <a href="/legal/risk.html" data-i18n="nav.riskDisclosure">Risk Disclosure</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="verify-wrap" style="padding-top:28px">
+    <section class="verify-hero reveal">
+      <div class="pill" data-i18n="verify.pill">Official Verification · Anti-Scam · Base Network</div>
+      <h1 style="margin:12px 0 8px;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;letter-spacing:-.04em" data-i18n="verify.title">Verify before you send.</h1>
+      <p style="margin:0;color:rgba(255,255,255,.82);line-height:1.65;max-width:780px" data-i18n-html="verify.lead"></p>
+      <div data-trust-strip style="margin-top:16px"></div>
+      <div class="deprecate" style="margin-top:16px;padding:14px;border-radius:14px;background:rgba(244,114,182,.1);border:1px solid rgba(244,114,182,.25);color:#fbcfe8;font-size:.9rem" data-i18n-html="verify.queuedBanner"></div>
+    </section>
+
+    <section class="reveal" style="margin-top:24px">
+      <div data-address-registry></div>
+    </section>
+
+    <section class="verify-card reveal" style="margin-top:20px">
+      <div class="title" style="font-size:.88rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:10px" data-i18n="verify.factsTitle">Token Facts</div>
+      <div class="verify-kv" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div><div class="verify-k" data-i18n="home.tokenName">Name</div><div class="verify-v">alviKRON</div></div>
+        <div><div class="verify-k" data-i18n="home.tokenSymbol">Symbol</div><div class="verify-v">ALVIKRON</div></div>
+        <div><div class="verify-k" data-i18n="home.tokenNetwork">Network</div><div class="verify-v">Base (EVM)</div></div>
+        <div><div class="verify-k" data-i18n="home.tokenSupply">Total Supply</div><div class="verify-v">10,000,000,000</div></div>
+        <div><div class="verify-k" data-i18n="home.tokenDecimals">Decimals</div><div class="verify-v">18</div></div>
+        <div><div class="verify-k">Mint After Deploy</div><div class="verify-v" data-i18n="common.no">No</div></div>
+        <div><div class="verify-k">Deployed</div><div class="verify-v">TBD</div></div>
+        <div><div class="verify-k" data-i18n="home.tokenLaunch">Launch Model</div><div class="verify-v" data-i18n="home.tokenLaunchVal">Fair launch — no presale</div></div>
+        <div><div class="verify-k">Timelocks</div><div class="verify-v" data-i18n="verify.timelocks">On-chain timelocks at deploy</div></div>
+      </div>
+    </section>
+
+    <section class="verify-card reveal" style="margin-top:16px">
+      <div class="title" style="font-size:.88rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:10px" data-i18n="verify.policyTitle">Anti-Dump Policy</div>
+      <p style="margin:0;color:var(--muted);line-height:1.7;font-size:.94rem" data-i18n-html="verify.policyDesc"></p>
+    </section>
+
+    <section class="verify-card reveal" style="margin-top:16px">
+      <div class="title" style="font-size:.88rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:10px" data-i18n="verify.channelsTitle">Official Channels</div>
+      <div data-official-channels="list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span data-i18n="verify.footer">© 2026 alviKRON · Official Verification</span>
+      <div class="footer-links">
+        <a href="/legal/risk.html" data-i18n="common.risk">Risk</a>
+        <a href="/" data-i18n="common.home">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/kron-data.js" defer></script>
+  <script src="/assets/js/kron-i18n.js" defer></script>
+  <script src="/assets/js/kron.js" defer></script>
+</body>
+</html>

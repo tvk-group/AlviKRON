@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KRON Fair Launch Program — Smart Contracts on Base</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Open-source KRON Fair Launch Program: KronToken, KronTimelock, and KronFairLaunch Solidity contracts for deploying KRON Family memecoins on Base with 80/10/5/5 tokenomics." />
+  <link rel="canonical" href="https://www.alvikron.com/program/" />
+  <meta property="og:title" content="KRON Fair Launch Program — Smart Contracts" />
+  <meta property="og:description" content="Deploy KRON Family memecoins with fair-launch tokenomics and on-chain timelocks. No presale logic." />
+  <meta property="og:url" content="https://www.alvikron.com/program/" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="stylesheet" href="/assets/css/kron.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"KRON Fair Launch Program","description":"Smart contract program for fair-launching KRON Family memecoins on Base","url":"https://www.alvikron.com/program/","author":{"@type":"Organization","name":"TVK Labs"}}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="alviKRON home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Launch Program</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/" data-i18n="common.home">Home</a>
+        <a href="/verify/" data-i18n="nav.verify">Verify</a>
+        <a href="/standard/" data-i18n="nav.standard">Standard</a>
+        <a href="/family/" data-i18n="nav.family">Family</a>
+        <span class="nav-lang" data-lang-switcher></span>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu-inner">
+        <a href="/">Home</a>
+        <a href="/verify/">Verify</a>
+        <a href="/standard/">Fair Launch Standard</a>
+        <a href="/family/">Family Roster</a>
+        <a href="/legal/risk.html">Risk</a>
+      </div>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="page-hero">
+      <div class="pill">Open Source · Base (EVM) · No Presale</div>
+      <h1 style="margin:0 0 14px;font-size:clamp(2rem,5vw,3.2rem);line-height:.95;letter-spacing:-.07em;font-weight:1000">KRON Fair Launch Program</h1>
+      <p class="lead" style="max-width:820px;color:var(--muted);line-height:1.75">Deploy any KRON Family memecoin with one transaction. Fixed 10B supply, 80/10/5/5 distribution, immutable timelocks. The on-chain implementation of the <a href="/standard/">Fair Launch Standard</a>.</p>
+      <div class="tags">
+        <span class="tag green">Solidity 0.8.24</span>
+        <span class="tag green">OpenZeppelin</span>
+        <span class="tag green">Hardhat</span>
+        <span class="tag red">No Presale Logic</span>
+      </div>
+    </div>
+
+    <div class="grid3" style="margin-bottom:24px">
+      <div class="page-card">
+        <div class="kicker">KronToken.sol</div>
+        <h2>Fixed-supply ERC20</h2>
+        <p>10 billion tokens minted once at deploy. No mint function. No pause. Standard 18 decimals.</p>
+      </div>
+      <div class="page-card">
+        <div class="kicker">KronTimelock.sol</div>
+        <h2>Immutable locks</h2>
+        <p>Beneficiary receives full allocation after releaseTime. Cannot be shortened. Transparent on BaseScan.</p>
+      </div>
+      <div class="page-card">
+        <div class="kicker">KronFairLaunch.sol</div>
+        <h2>One-call deploy</h2>
+        <p>Factory contract: launch(name, symbol, lpWallet, ecoBeneficiary, founderBeneficiary) → token + 3 timelocks.</p>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="kicker">Distribution</div>
+      <h2>Automatic 80 / 10 / 5 / 5 split</h2>
+      <table class="data">
+        <thead><tr><th>Allocation</th><th>%</th><th>Lock</th><th>Recipient</th></tr></thead>
+        <tbody>
+          <tr><td><strong>LP</strong></td><td>80%</td><td>At launch</td><td>lpWallet parameter</td></tr>
+          <tr><td><strong>Ecosystem</strong></td><td>10%</td><td>365 days</td><td>ecosystemBeneficiary via timelock</td></tr>
+          <tr><td><strong>Founder short</strong></td><td>5%</td><td>180 days</td><td>founderBeneficiary via timelock</td></tr>
+          <tr><td><strong>Founder long</strong></td><td>5%</td><td>365 days</td><td>founderBeneficiary via timelock</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="page-card">
+      <div class="kicker">Deploy</div>
+      <h2>Quick start</h2>
+      <div class="code-block"># Clone repo, configure wallets
+cp program/.env.example program/.env
+
+# Install & test
+cd program
+npm install
+npm test
+
+# Deploy to Base Sepolia (testnet)
+npm run deploy:base-sepolia
+
+# Deploy to Base mainnet
+npm run deploy:base</div>
+      <p style="margin-top:14px">Required environment variables: <code style="background:#0b1220;color:#e5e7eb;padding:2px 6px;border-radius:6px">DEPLOYER_PRIVATE_KEY</code>, <code style="background:#0b1220;color:#e5e7eb;padding:2px 6px;border-radius:6px">LP_WALLET</code>, <code style="background:#0b1220;color:#e5e7eb;padding:2px 6px;border-radius:6px">ECOSYSTEM_BENEFICIARY</code>, <code style="background:#0b1220;color:#e5e7eb;padding:2px 6px;border-radius:6px">FOUNDER_BENEFICIARY</code></p>
+    </div>
+
+    <div class="page-card">
+      <div class="kicker">After deploy</div>
+      <h2>Verification checklist</h2>
+      <ul>
+        <li>Publish token + timelock addresses on <a href="/verify/">verify page</a></li>
+        <li>Verify contracts on BaseScan</li>
+        <li>Add LP on DEX (80% allocation)</li>
+        <li>Announce via official channels only</li>
+        <li>Apply anti-dump policy: 14-day notice, 10% max per sale</li>
+      </ul>
+      <div class="highlight">Use the same program for all KRON Family tokens. Change TOKEN_NAME and TOKEN_SYMBOL per token (alviKRON, soviKRON, etc.).</div>
+    </div>
+
+    <div class="page-card" style="margin-top:24px">
+      <div class="kicker">alviKRON V2 (Deployed)</div>
+      <h2>Live on Base — verified</h2>
+      <p>Official alviKRON V2 contract and allocation wallets are published on the <a href="/verify/">verification page</a> with BaseScan links.</p>
+      <div class="code-block" style="margin-top:12px">Contract: TBD
+Network: Base · Verified on BaseScan</div>
+    </div>
+
+    <div class="cta-box">
+      <h2>Policy + Code = Trust</h2>
+      <p>The Fair Launch Standard defines the rules. This program enforces them on-chain.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="/standard/">Fair Launch Standard</a>
+        <a class="btn" href="/family/">Family Roster</a>
+        <a class="btn" href="/">Home</a>
+      </div>
+    </div>
+
+    <footer>
+      <span>© 2026 KRON Family · Launch Program v1.0</span>
+      <span><a href="/legal/risk.html">Risk</a> · <a href="/">Home</a></span>
+    </footer>
+  </div>
+  <script src="/assets/js/kron-data.js" defer></script>
+  <script src="/assets/js/kron-i18n.js" defer></script>
+  <script src="/assets/js/kron.js" defer></script>
+</body>
+</html>

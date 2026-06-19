@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ALVIKRON Legal – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for ALVIKRON experimental memecoin website." />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#020617;color:#e5e7eb;}
+    a{color:#fbbf24;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 6vw 56px;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;}
+    .brand{font-weight:800;letter-spacing:.08em;color:#fbbf24}
+    .nav a{margin-left:14px;color:#e5e7eb;font-size:.95rem}
+    .card{background:#020617;border:1px solid #1f2937;border-radius:16px;box-shadow:0 18px 40px rgba(15,23,42,.9);padding:18px;}
+    .title{font-size:.9rem;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin:0 0 10px}
+    h1{margin:0 0 10px;font-size:1.55rem}
+    .meta{color:#9ca3af;font-size:.9rem;margin-bottom:14px}
+    select{background:#0b1222;color:#e5e7eb;border:1px solid #1f2937;border-radius:999px;padding:8px 12px}
+    .content{margin-top:14px;line-height:1.65;color:#e5e7eb}
+    .content h2{font-size:1.05rem;margin:18px 0 8px;color:#f3f4f6}
+    footer{margin-top:18px;color:#6b7280;font-size:.85rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">ALVIKRON • Legal</div>
+      <div class="nav">
+        <a href="../index.html">Home</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./risk.html">Risk</a>
+      </div>
+    </header>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+        <div>
+          <div class="title">Privacy Policy</div>
+          <h1>Privacy Policy – ALVIKRON Website</h1>
+          <div class="meta">Last updated: 14 Dec 2025 • Official (binding) language: English</div>
+        </div>
+        <div>
+          <label class="meta" for="lang">Language</label><br/>
+          <select id="lang">
+            <option value="en" selected>English (Official)</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="tr">Türkçe</option>
+            <option value="ru">Русский</option>
+            <option value="es">Español</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="content" class="content"></div>
+
+      <footer>
+        <span>© ALVIKRON • Experimental memecoin</span>
+        <span>Contact: <a href="mailto:team@alvikron.com">team@alvikron.com</a></span>
+      </footer>
+    </div>
+  </div>
+
+<script>
+const P = {
+  en: `
+    <h2>1. Summary</h2>
+    <p>This website is an informational page for the experimental token ALVIKRON. We aim to collect as little personal data as possible.</p>
+
+    <h2>2. Data we collect</h2>
+    <p><b>We do not require accounts or logins</b> and we do not ask for wallet seed phrases.</p>
+    <p>Depending on your hosting provider, basic technical logs may exist (e.g., IP address, user agent, timestamps) for security and abuse prevention.</p>
+
+    <h2>3. Cookies</h2>
+    <p>This website does not intentionally set marketing cookies. If you add third-party analytics, update this policy accordingly.</p>
+
+    <h2>4. Email contact</h2>
+    <p>If you contact us by email, we will receive your email address and the content you send. We use it only to respond and for operational purposes.</p>
+
+    <h2>5. Third-party links</h2>
+    <p>Links to third-party services (e.g., block explorers) have their own privacy practices. We are not responsible for them.</p>
+
+    <h2>6. Data retention</h2>
+    <p>We retain contact emails only as long as necessary to respond and comply with legitimate operational needs.</p>
+
+    <h2>7. Your rights</h2>
+    <p>Depending on your jurisdiction, you may have rights to request access, correction, or deletion of your personal data. Contact: <a href="mailto:team@alvikron.com">team@alvikron.com</a></p>
+
+    <h2>8. Changes</h2>
+    <p>We may update this policy from time to time. Continued use indicates acceptance of the updated policy.</p>
+  `,
+  de: `<p><b>Hinweis:</b> Diese Übersetzung dient nur der Information. Maßgeblich ist Englisch.</p>` + `
+    <h2>Kurzfassung</h2><p>Diese Website ist eine Informationsseite für ALVIKRON. Wir sammeln so wenig Daten wie möglich.</p>
+    <h2>Daten</h2><p>Keine Logins. Keine Seed-Phrases. Technische Logs können beim Hosting aus Sicherheitsgründen anfallen.</p>
+    <h2>Cookies</h2><p>Keine beabsichtigten Marketing-Cookies.</p>
+    <h2>E-Mail</h2><p>Bei Kontakt per E-Mail verarbeiten wir Ihre Adresse und Nachricht zur Beantwortung.</p>
+  `,
+  fr: `<p><b>Note :</b> Traduction informative. La version anglaise prévaut.</p>` + `
+    <h2>Résumé</h2><p>Site informatif pour ALVIKRON. Nous minimisons les données collectées.</p>
+    <h2>Données</h2><p>Pas de comptes. Pas de seed. Des journaux techniques peuvent exister côté hébergeur.</p>
+    <h2>Cookies</h2><p>Pas de cookies marketing intentionnels.</p>
+    <h2>Email</h2><p>Si vous nous écrivez, nous utilisons votre email pour répondre.</p>
+  `,
+  tr: `<p><b>Not:</b> Bu çeviri bilgilendirme amaçlıdır. Bağlayıcı metin İngilizce’dir.</p>` + `
+    <h2>Özet</h2><p>ALVIKRON için bilgilendirme sitesidir. Mümkün olan en az veriyi toplarız.</p>
+    <h2>Veriler</h2><p>Hesap yok. Seed istemeyiz. Hosting tarafında güvenlik için teknik loglar olabilir.</p>
+    <h2>Çerez</h2><p>Bilerek pazarlama çerezi kullanılmaz.</p>
+    <h2>E-posta</h2><p>E-posta ile iletişimde, yanıt vermek için adresinizi işleriz.</p>
+  `,
+  ru: `<p><b>Примечание:</b> Перевод для информации. Официальная версия — английская.</p>` + `
+    <h2>Кратко</h2><p>Информационный сайт ALVIKRON. Мы минимизируем сбор данных.</p>
+    <h2>Данные</h2><p>Нет аккаунтов. Нет запросов seed-фраз. Возможны технические логи хостинга.</p>
+    <h2>Cookie</h2><p>Маркетинговые cookie не используются намеренно.</p>
+    <h2>Email</h2><p>При обращении по email используем данные для ответа.</p>
+  `,
+  es: `<p><b>Nota:</b> Traducción informativa. La versión oficial es la inglesa.</p>` + `
+    <h2>Resumen</h2><p>Sitio informativo de ALVIKRON. Minimizamos la recopilación de datos.</p>
+    <h2>Datos</h2><p>Sin cuentas. Sin seed phrases. Pueden existir logs técnicos del hosting.</p>
+    <h2>Cookies</h2><p>No se usan cookies de marketing intencionalmente.</p>
+    <h2>Email</h2><p>Si escribes por email, lo usamos para responder.</p>
+  `,
+  ja: `<p><b>注:</b> 参考翻訳です。正式版は英語です。</p>` + `
+    <h2>概要</h2><p>ALVIKRONの情報サイトです。収集する個人データを最小化します。</p>
+    <h2>収集データ</h2><p>アカウント不要。シード要求なし。ホスティング側の技術ログがある場合があります。</p>
+  `,
+  zh: `<p><b>说明:</b> 仅供参考翻译，以英文为准。</p>` + `
+    <h2>概述</h2><p>本网站为 ALVIKRON 信息页面，尽量减少个人数据收集。</p>
+    <h2>收集数据</h2><p>不需要账号，不索要助记词。托管服务可能存在基础技术日志。</p>
+  `,
+  ar: `<p><b>ملاحظة:</b> ترجمة للاطلاع فقط. النسخة الإنجليزية هي المعتمدة.</p>` + `
+    <h2>ملخص</h2><p>موقع معلوماتي لعملة ALVIKRON. نُقلّل جمع البيانات قدر الإمكان.</p>
+    <h2>البيانات</h2><p>لا حسابات ولا طلب لعبارات الاسترداد. قد توجد سجلات تقنية لدى مزود الاستضافة.</p>
+  `
+};
+
+const sel = document.getElementById('lang');
+const content = document.getElementById('content');
+function render(){
+  const k = sel.value;
+  content.innerHTML = P[k] || P.en;
+  document.documentElement.lang = k;
+  document.documentElement.dir = (k === 'ar') ? 'rtl' : 'ltr';
+}
+sel.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>
