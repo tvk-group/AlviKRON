@@ -1,4 +1,4 @@
-/* alviKRON Community App — mobile-first PWA shell */
+/* alviKRON Community App — vertical stack, mobile-first PWA */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
@@ -11,10 +11,10 @@
   --gold:#f472b6;
   --violet:#7c3aed;
   --green:#10b981;
-  --red:#f87171;
   --shadow:0 24px 80px rgba(0,0,0,.45);
   --radius:22px;
   --safe-bottom:env(safe-area-inset-bottom, 0px);
+  --stack-gap:16px;
 }
 
 *,*::before,*::after { box-sizing:border-box; }
@@ -32,38 +32,99 @@ body {
 a { color:var(--gold); text-decoration:none; }
 a:hover { text-decoration:underline; }
 .mono { font-family:"JetBrains Mono", ui-monospace, monospace; font-size:.84rem; }
+img { max-width:100%; height:auto; display:block; }
 
 .app-shell {
   min-height:100%;
   display:flex;
   flex-direction:column;
-  padding-bottom:calc(72px + var(--safe-bottom));
+  padding-bottom:calc(80px + var(--safe-bottom));
+}
+
+/* PWA install banner — browser-driven */
+.install-banner {
+  position:sticky; top:0; z-index:80;
+  display:flex; align-items:center; gap:12px;
+  padding:12px 16px;
+  background:linear-gradient(135deg, rgba(244,114,182,.18), rgba(124,58,237,.14));
+  border-bottom:1px solid rgba(244,114,182,.28);
+  backdrop-filter:blur(16px);
+}
+.install-banner.hidden { display:none !important; }
+.install-banner-icon {
+  width:44px; height:44px; flex-shrink:0;
+  border-radius:14px; object-fit:contain;
+  background:rgba(255,255,255,.06);
+  box-shadow:0 8px 24px rgba(244,114,182,.2);
+}
+.install-banner-copy { flex:1; min-width:0; }
+.install-banner-copy strong {
+  display:block; font-size:.88rem; color:#fff; letter-spacing:-.02em;
+}
+.install-banner-copy span {
+  display:block; font-size:.76rem; color:var(--muted); margin-top:2px;
+}
+.install-banner-actions { display:flex; flex-direction:column; gap:6px; flex-shrink:0; }
+.install-banner .btn { padding:10px 14px; font-size:.78rem; min-height:auto; }
+.install-banner-dismiss {
+  background:transparent; border:none; color:var(--muted);
+  font-size:.72rem; cursor:pointer; padding:4px 0; font:inherit;
 }
 
 .app-topbar {
   position:sticky; top:0; z-index:50;
   display:flex; align-items:center; justify-content:space-between; gap:12px;
   padding:14px 18px;
-  background:rgba(2,6,23,.9);
+  background:rgba(2,6,23,.92);
   border-bottom:1px solid var(--line);
   backdrop-filter:blur(16px);
 }
+body.has-install-banner .app-topbar { top:0; }
 .app-brand {
   display:flex; align-items:center; gap:10px;
   font-weight:900; letter-spacing:-.04em; color:#fff;
+  text-decoration:none;
 }
-.app-brand img { width:38px; height:38px; border-radius:14px; }
-.app-topbar-actions { display:flex; gap:8px; align-items:center; }
+.app-brand:hover { text-decoration:none; }
+.app-brand img {
+  width:40px; height:40px; border-radius:14px;
+  object-fit:contain; flex-shrink:0;
+  background:rgba(255,255,255,.04);
+  box-shadow:0 8px 24px rgba(244,114,182,.18);
+}
+.app-topbar-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
 
 .app-main {
-  width:min(720px, calc(100% - 32px));
+  width:min(520px, calc(100% - 28px));
   margin:0 auto;
-  padding:22px 0 28px;
+  padding:18px 0 28px;
   flex:1;
 }
 
+/* Vertical stack — everything one below another */
+.app-stack {
+  display:flex;
+  flex-direction:column;
+  gap:var(--stack-gap);
+}
+
+.app-hero-logo {
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  gap:14px; padding:8px 0 4px;
+}
+.app-hero-logo img {
+  width:96px; height:96px; border-radius:28px;
+  object-fit:contain;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(244,114,182,.22);
+}
+.app-hero-logo .wordmark {
+  font-size:1.5rem; font-weight:900; letter-spacing:-.06em; color:#fff;
+}
+
 .app-hero {
-  padding:22px 20px;
+  padding:20px 18px;
   border-radius:28px;
   border:1px solid var(--line);
   background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
@@ -76,18 +137,10 @@ a:hover { text-decoration:underline; }
   color:#fbcfe8; font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
 }
 .app-hero h1 {
-  margin:14px 0 8px; font-size:clamp(1.55rem, 4vw, 2rem);
-  letter-spacing:-.05em; line-height:1.05;
+  margin:14px 0 8px; font-size:clamp(1.45rem, 5vw, 1.85rem);
+  letter-spacing:-.05em; line-height:1.1;
 }
-.app-hero p { margin:0; color:var(--muted); line-height:1.65; }
-
-.app-grid {
-  display:grid; gap:14px; margin-top:16px;
-}
-@media (min-width:640px) {
-  .app-grid.cols-2 { grid-template-columns:1fr 1fr; }
-  .app-grid.cols-3 { grid-template-columns:repeat(3,1fr); }
-}
+.app-hero p { margin:0; color:var(--muted); line-height:1.65; font-size:.94rem; }
 
 .app-card {
   padding:18px;
@@ -99,21 +152,24 @@ a:hover { text-decoration:underline; }
   margin:0 0 8px; font-size:1rem; letter-spacing:-.02em;
 }
 .app-card p { margin:0; color:var(--muted); line-height:1.6; font-size:.92rem; }
+.app-card + .app-card { margin-top:0; }
 
-.stat {
-  display:flex; flex-direction:column; gap:4px;
+.app-actions {
+  display:flex; flex-direction:column; gap:10px; margin-top:14px;
 }
+
+.stat { display:flex; flex-direction:column; gap:6px; }
 .stat .label {
   color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; font-weight:700;
 }
 .stat .value {
-  font-size:1.35rem; font-weight:900; letter-spacing:-.04em;
+  font-size:1.35rem; font-weight:900; letter-spacing:-.04em; word-break:break-word;
 }
 .stat .value.sm { font-size:1rem; }
 
 .btn {
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  padding:13px 18px; border-radius:16px; border:1px solid var(--line);
+  padding:14px 18px; border-radius:16px; border:1px solid var(--line);
   background:rgba(255,255,255,.06); color:#fff; font-weight:700;
   cursor:pointer; font:inherit; text-decoration:none;
 }
@@ -127,33 +183,41 @@ a:hover { text-decoration:underline; }
 .btn:disabled { opacity:.55; cursor:not-allowed; }
 
 .wallet-chip {
-  max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
   padding:8px 12px; border-radius:999px;
   background:rgba(255,255,255,.08); border:1px solid var(--line);
   font-size:.78rem; color:var(--soft);
 }
 
+/* Vertical journey timeline */
 .journey {
-  display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:14px;
+  display:flex; flex-direction:column; gap:0; margin-top:16px;
+  border-left:2px solid rgba(244,114,182,.25); margin-left:10px; padding-left:18px;
 }
 .journey-step {
-  text-align:center; font-size:.68rem; color:var(--muted); font-weight:700;
+  position:relative; padding:0 0 16px 0;
+  font-size:.82rem; color:var(--muted); font-weight:700;
+  display:flex; align-items:center; gap:10px;
 }
+.journey-step:last-child { padding-bottom:0; }
 .journey-step .dot {
-  width:28px; height:28px; margin:0 auto 6px; border-radius:999px;
-  display:grid; place-items:center; font-size:.72rem; font-weight:900;
-  background:rgba(255,255,255,.06); border:1px solid var(--line); color:var(--soft);
+  position:absolute; left:-27px;
+  width:24px; height:24px; border-radius:999px;
+  display:grid; place-items:center; font-size:.68rem; font-weight:900;
+  background:rgba(255,255,255,.06); border:2px solid var(--line); color:var(--soft);
 }
+.journey-step.active { color:#fbcfe8; }
 .journey-step.active .dot {
-  background:rgba(244,114,182,.18); border-color:rgba(244,114,182,.45); color:#fbcfe8;
+  background:rgba(244,114,182,.2); border-color:rgba(244,114,182,.5); color:#fbcfe8;
 }
+.journey-step.done { color:#6ee7b7; }
 .journey-step.done .dot {
   background:rgba(16,185,129,.15); border-color:rgba(16,185,129,.35); color:#6ee7b7;
 }
 
 .registry-table { width:100%; border-collapse:collapse; font-size:.86rem; }
 .registry-table th, .registry-table td {
-  padding:10px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top;
+  padding:10px 6px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top;
 }
 .registry-table th { color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; }
 
@@ -163,18 +227,16 @@ a:hover { text-decoration:underline; }
 .badge.ok { background:rgba(16,185,129,.14); color:#6ee7b7; border:1px solid rgba(16,185,129,.28); }
 .badge.warn { background:rgba(248,113,113,.12); color:#fecaca; border:1px solid rgba(248,113,113,.28); }
 
-.install-steps { display:grid; gap:10px; margin-top:12px; }
-.install-step {
-  padding:12px 14px; border-radius:16px; background:rgba(255,255,255,.04); border:1px solid var(--line);
-  font-size:.88rem; color:var(--soft); line-height:1.55;
+.install-fallback {
+  font-size:.84rem; color:var(--soft); line-height:1.55; margin-top:10px;
 }
-.install-step strong { color:#fff; }
+.install-fallback.hidden { display:none !important; }
 
 .app-nav {
   position:fixed; left:0; right:0; bottom:0; z-index:60;
   display:grid; grid-template-columns:repeat(4,1fr);
   padding:8px 10px calc(8px + var(--safe-bottom));
-  background:rgba(2,6,23,.94); border-top:1px solid var(--line); backdrop-filter:blur(16px);
+  background:rgba(2,6,23,.96); border-top:1px solid var(--line); backdrop-filter:blur(16px);
 }
 .app-nav a {
   display:flex; flex-direction:column; align-items:center; gap:4px;
@@ -185,9 +247,12 @@ a:hover { text-decoration:underline; }
 .app-nav svg { width:20px; height:20px; }
 
 .app-note {
-  margin-top:14px; padding:12px 14px; border-radius:16px;
+  padding:12px 14px; border-radius:16px;
   background:rgba(248,113,113,.08); border:1px solid rgba(248,113,113,.22);
   color:#fecaca; font-size:.82rem; line-height:1.55;
+}
+.app-note.soft {
+  background:rgba(244,114,182,.08); border-color:rgba(244,114,182,.22); color:#fbcfe8;
 }
 
 .hidden { display:none !important; }
@@ -196,3 +261,7 @@ a:hover { text-decoration:underline; }
   border-top-color:#fff; border-radius:999px; animation:spin .7s linear infinite;
 }
 @keyframes spin { to { transform:rotate(360deg); } }
+
+@media (min-width:640px) {
+  .app-main { width:min(560px, calc(100% - 40px)); }
+}

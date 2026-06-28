@@ -67,7 +67,8 @@ header {
 }
 .brand-mark {
   width:46px; height:46px; border-radius:17px; display:block; flex-shrink:0;
-  object-fit:cover;
+  object-fit:contain;
+  background:rgba(255,255,255,.04);
   box-shadow:0 16px 42px rgba(244,114,182,.24);
 }
 nav.main-nav {
@@ -183,44 +184,48 @@ h1 { margin:24px 0 18px; font-size:clamp(3.3rem, 9vw, 8rem); line-height:.84; le
   box-shadow:0 20px 52px rgba(244,114,182,.24);
 }
 
-/* Coin visual */
+/* Coin visual — vertical stack, no overlapping layers */
 .coin-card {
-  min-height:520px; border-radius:42px; border:1px solid var(--line);
+  min-height:auto; border-radius:42px; border:1px solid var(--line);
   background:
-    radial-gradient(circle at 50% 34%, rgba(244,114,182,.26), transparent 14rem),
+    radial-gradient(circle at 50% 20%, rgba(244,114,182,.26), transparent 14rem),
     radial-gradient(circle at 78% 20%, rgba(124,58,237,.22), transparent 16rem),
-    radial-gradient(circle at 28% 76%, rgba(6,182,212,.12), transparent 16rem),
     linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-  box-shadow:var(--shadow); position:relative; overflow:hidden; padding:26px;
+  box-shadow:var(--shadow); position:relative; overflow:hidden; padding:28px 24px 24px;
   isolation:isolate;
+  display:flex; flex-direction:column; align-items:center; gap:20px;
 }
 .coin-card::before {
-  content:""; position:absolute; inset:0;
+  content:""; position:absolute; inset:0; pointer-events:none;
   background-image:
     linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
   background-size:34px 34px; mask-image:radial-gradient(circle at center, black, transparent 76%);
 }
-.coin-logo {
-  position:absolute; left:50%; top:34%; width:min(280px, 72%); height:auto;
-  transform:translate(-50%,-50%); z-index:1;
-  filter:drop-shadow(0 28px 90px rgba(244,114,182,.22));
-  animation:pulseOrb 5s ease-in-out infinite;
+.coin-card-inner {
+  position:relative; z-index:2; width:100%;
+  display:flex; flex-direction:column; align-items:center; gap:18px;
 }
-@keyframes pulseOrb {
-  0%,100% { transform:translate(-50%,-50%) scale(1); }
-  50% { transform:translate(-50%,-50%) scale(1.035); }
+.coin-chips {
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px; width:100%;
 }
 .float-chip {
-  position:absolute; z-index:4; padding:10px 13px; border-radius:999px;
+  position:static; padding:10px 13px; border-radius:999px;
   background:rgba(255,255,255,.10); border:1px solid var(--line); color:var(--muted);
-  font-size:.82rem; font-weight:850; box-shadow:0 16px 38px rgba(0,0,0,.12); backdrop-filter:blur(12px);
+  font-size:.82rem; font-weight:850; box-shadow:0 8px 24px rgba(0,0,0,.12); backdrop-filter:blur(12px);
 }
-.chip1 { top:34px; left:34px; }
-.chip2 { top:74px; right:34px; }
-.chip3 { bottom:188px; left:46px; }
+.coin-logo-wrap {
+  display:flex; align-items:center; justify-content:center;
+  width:100%; padding:12px 0;
+}
+.coin-logo {
+  position:static; width:min(220px, 72%); height:auto;
+  transform:none; z-index:1;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 60px rgba(244,114,182,.22));
+}
 .status-card {
-  position:absolute; left:28px; right:28px; bottom:28px; z-index:6; padding:20px;
+  position:static; width:100%; z-index:2; padding:20px;
   border-radius:26px; color:white; background:rgba(2,6,23,.90);
   border:1px solid rgba(255,255,255,.16); box-shadow:0 22px 60px rgba(0,0,0,.28);
 }
@@ -754,10 +759,7 @@ body.rtl .addr-actions { justify-content:flex-end; }
   .hero-metrics .stats-bar { grid-template-columns:1fr; }
   .trust-strip { grid-template-columns:1fr; }
   .btn { width:100%; }
-  .coin-card { min-height:480px; }
-  .coin-logo { width:min(220px, 68%); top:32%; }
-  .chip2 { top:82px; right:22px; }
-  .chip3 { bottom:170px; }
+  .coin-card { min-height:auto; }
   .app-install-grid { grid-template-columns:1fr; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -771,7 +773,7 @@ body.rtl .addr-actions { justify-content:flex-end; }
   display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px;
 }
 .app-install-grid {
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+  display:grid; grid-template-columns:1fr; gap:16px;
 }
 .app-install-card {
   padding:20px 18px; border-radius:22px;
@@ -819,7 +821,7 @@ body.consent-locked { overflow:hidden; }
   display:flex; align-items:center; gap:12px; margin-bottom:18px;
   font-weight:900; letter-spacing:-.04em; font-size:1.1rem; color:#fff;
 }
-.consent-brand .brand-mark { width:40px; height:40px; border-radius:14px; object-fit:cover; }
+.consent-brand .brand-mark { width:40px; height:40px; border-radius:14px; object-fit:contain; background:rgba(255,255,255,.04); }
 .consent-kicker {
   margin:0 0 8px; color:var(--gold); text-transform:uppercase;
   letter-spacing:.14em; font-size:.76rem; font-weight:950;

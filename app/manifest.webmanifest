@@ -1,26 +1,42 @@
 {
+  "id": "alvikron-community-app",
   "name": "alviKRON Community App",
   "short_name": "alviKRON",
   "description": "Holder portal for alviKRON on Base — wallet connect, AKRON balance, and on-chain verification.",
   "start_url": "/app/",
   "scope": "/app/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#020617",
   "theme_color": "#020617",
   "lang": "en",
+  "prefer_related_applications": false,
   "categories": ["finance", "utilities"],
   "icons": [
     {
       "src": "/assets/brand/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/brand/icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/assets/brand/icon-32.png",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
