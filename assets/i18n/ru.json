@@ -27,7 +27,8 @@
     "fairLaunchStandard": "Стандарт Fair Launch",
     "launchProgram": "Программа запуска",
     "onchainRegistry": "On-Chain реестр",
-    "riskDisclosure": "Предупреждение о рисках"
+    "riskDisclosure": "Предупреждение о рисках",
+    "app": "App"
   },
   "footer": {
     "copyright": "© 2026 alviKRON · KRON Family · Fair Launch on Base.",
@@ -160,7 +161,21 @@
     "badgeQueued": "Фаза II",
     "badgeGated": "Фаза III",
     "tokenContractVal": "0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12",
-    "tokenPhaseVal": "Phase II satellite · Live"
+    "tokenPhaseVal": "Phase II satellite · Live",
+    "btnApp": "Get the App",
+    "appKicker": "Community App",
+    "appTitle": "Get the alviKRON holder app at app.alvikron.com",
+    "appDesc": "Install the community portal on your phone — connect your wallet on Base, view your AKRON balance, and verify official addresses from a home-screen icon. Works today via Add to Home Screen.",
+    "appOpen": "Open app.alvikron.com →",
+    "appDashboard": "Holder dashboard",
+    "appInstallLink": "How to install",
+    "appIosTitle": "iPhone / iPad",
+    "appIosDesc": "Safari → app.alvikron.com → Share → Add to Home Screen",
+    "appAndroidTitle": "Android",
+    "appAndroidDesc": "Chrome → app.alvikron.com → menu → Install app or Add to Home screen",
+    "appDesktopTitle": "Desktop",
+    "appDesktopDesc": "Chrome or Edge → install icon in the address bar, or bookmark app.alvikron.com",
+    "appNote": "Fair-launch holder portal only — no presale, no KYC, no investor dashboard. For infrastructure presales see entelekron.io and sovraprotocol.com."
   },
   "verify": {
     "pageTitle": "alviKRON – Официальная проверка и On-Chain реестр",
@@ -202,7 +217,9 @@
     "q9": "How do I contact the alviKRON team?",
     "a9": "Official project email: <a href=\"mailto:team@alvikron.com\">team@alvikron.com</a>. Only trust communications from official domains (alvikron.com) and verified channels.",
     "q10": "Is alviKRON financial advice or an investment?",
-    "a10": "No. alviKRON is an experimental memecoin for culture and community. This website is informational only — not financial, legal, or tax advice. You may lose all funds. DYOR."
+    "a10": "No. alviKRON is an experimental memecoin for culture and community. This website is informational only — not financial, legal, or tax advice. You may lose all funds. DYOR.",
+    "q11": "How do I get the alviKRON community app?",
+    "a11": "Open <a href=\"/app/\">app.alvikron.com</a> on your phone and add it to your home screen (Safari → Share → Add to Home Screen on iPhone; Chrome → Install app on Android). Connect a wallet on Base to view AKRON balance and verify official addresses — no presale or KYC."
   },
   "consent": {
     "kicker": "Before you continue",
@@ -258,6 +275,8 @@
     "sovraNetwork": "SOVRA Network",
     "sovraNetworkDesc": "SOVRA community hub, network information, and ecosystem updates.",
     "sovraProtocol": "SOVRA Protocol",
-    "sovraProtocolDesc": "On-chain governance and protocol layer for the SOVRA ecosystem."
+    "sovraProtocolDesc": "On-chain governance and protocol layer for the SOVRA ecosystem.",
+    "app": "Community App",
+    "appDesc": "Holder PWA at app.alvikron.com — wallet connect, AKRON balance, on-chain verify."
   }
 }

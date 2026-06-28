@@ -758,13 +758,33 @@ body.rtl .addr-actions { justify-content:flex-end; }
   .coin-logo { width:min(220px, 68%); top:32%; }
   .chip2 { top:82px; right:22px; }
   .chip3 { bottom:170px; }
-  .verify-kv { grid-template-columns:1fr; }
-}
+  .app-install-grid { grid-template-columns:1fr; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
   html { scroll-behavior:auto; }
 }
+
+/* Community app promo (homepage) */
+.app-promo { margin-top:8px; }
+.app-promo-actions {
+  display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px;
+}
+.app-install-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+}
+.app-install-card {
+  padding:20px 18px; border-radius:22px;
+  border:1px solid rgba(15,23,42,.1); background:#fff;
+  box-shadow:0 12px 40px rgba(15,23,42,.06);
+}
+.app-install-card h3 {
+  margin:0 0 8px; font-size:1rem; color:#111827; letter-spacing:-.02em;
+}
+.app-install-card p {
+  margin:0; color:#617086; font-size:.9rem; line-height:1.6;
+}
+.app-promo-note { margin-top:20px; font-size:.92rem; color:#617086; }
 
 /* Legal & cookie consent gate */
 html:not(.consent-accepted) #site-root {

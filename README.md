@@ -3,19 +3,22 @@
 Official website for **alviKRON** (ALVIKRON) — the ALVINA and creator-economy themed KRON Family memecoin on Base.
 
 - **Site:** https://www.alvikron.com
+- **App:** https://app.alvikron.com (holder PWA — wallet, balance, verify)
 - **Contact:** team@alvikron.com
 - **Primary KRON gateway:** https://www.ekron.network
-- **Phase:** II satellite (queued for fair launch)
+- **Phase:** II satellite · live on Base
 - **Tokenomics:** 10B fixed supply · 80/10/5/5 · fair launch only · no presale
 
 ## Structure
 
-Mirrors the [eKRON](https://github.com/tvk-group/eKRON) site architecture:
+Mirrors the [eKRON](https://github.com/tvk-group/eKRON) site architecture, with a community holder app like entelekron.app / app.sovraprotocol.com (adapted for fair-launch memecoins — no presale/KYC):
 
 | Path | Purpose |
 |------|---------|
 | `/` | Homepage with consent gate, i18n, SEO, FAQs |
-| `/verify/` | On-chain registry (TBD until deployment) |
+| `/app/` | Community holder PWA — wallet connect, install instructions |
+| `/app/dashboard.html` | AKRON balance, on-chain registry, BaseScan links |
+| `/verify/` | On-chain registry |
 | `/standard/` | KRON Fair Launch Standard |
 | `/family/` | Full 7-token roster with www links |
 | `/program/` | Fair Launch Program docs |
@@ -30,8 +33,11 @@ Mirrors the [eKRON](https://github.com/tvk-group/eKRON) site architecture:
 - Legal + cookie consent gate
 - SEO: robots.txt, sitemap.xml, hreflang, JSON-LD, 10 FAQs
 - Mobile navigation
+- Holder PWA at `/app/` (installable; CNAME `app.alvikron.com` → same Vercel project)
 
-## Brand assets
+## App subdomain
+
+Point `app.alvikron.com` CNAME to the same Vercel deployment as `www.alvikron.com`. The app is served from `/app/` with its own manifest and service worker.
 
 Official logos live in [`assets/brand/`](assets/brand/README.md).
 
