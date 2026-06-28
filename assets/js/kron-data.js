@@ -126,6 +126,12 @@ window.KRON_DATA = {
       descKey: 'channels.alvikronDesc'
     },
     {
+      labelKey: 'channels.app',
+      host: 'app.alvikron.com',
+      url: 'https://app.alvikron.com/',
+      descKey: 'channels.appDesc'
+    },
+    {
       labelKey: 'channels.verify',
       host: 'www.alvikron.com/verify',
       url: 'https://www.alvikron.com/verify/',

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>alviKRON Dashboard — Holder Balance & Registry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="alviKRON holder dashboard — AKRON balance on Base, official contract verification, and allocation registry." />
+  <meta name="theme-color" content="#020617" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="alviKRON" />
+  <link rel="canonical" href="https://app.alvikron.com/dashboard" />
+  <link rel="manifest" href="/app/manifest.webmanifest" />
+  <link rel="icon" href="/assets/brand/icon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/assets/brand/icon-512.png" />
+  <link rel="stylesheet" href="/assets/css/app.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-topbar">
+      <a class="app-brand" href="/app/">
+        <img src="/assets/brand/icon.png" alt="" width="38" height="38" />
+        <span>alviKRON</span>
+      </a>
+      <div class="app-topbar-actions">
+        <span id="wallet-chip" class="wallet-chip hidden" aria-live="polite">—</span>
+        <button type="button" class="btn hidden" id="btn-disconnect" style="font-size:.78rem;padding:8px 12px">Disconnect</button>
+        <button type="button" class="btn primary" id="btn-connect" style="font-size:.78rem;padding:8px 12px">Connect</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section id="connect-gate" class="app-hero">
+        <span class="pill">Dashboard</span>
+        <h1>Connect to view your balance</h1>
+        <p>Link a wallet on Base to read your AKRON balance. No login, no presale, no custody.</p>
+        <button type="button" class="btn primary block" id="btn-connect-gate" onclick="document.getElementById('btn-connect').click()" style="margin-top:14px">Connect Wallet</button>
+      </section>
+
+      <div id="dashboard-main" class="hidden">
+        <div class="app-grid cols-3" style="margin-top:0">
+          <article class="app-card stat">
+            <span class="label">Your balance</span>
+            <span class="value" id="balance-value">—</span>
+            <button type="button" class="btn" id="btn-refresh" style="margin-top:10px;font-size:.78rem;padding:8px 12px">Refresh</button>
+          </article>
+          <article class="app-card stat">
+            <span class="label">Network</span>
+            <span class="value sm" id="network-value">—</span>
+          </article>
+          <article class="app-card stat">
+            <span class="label">Contract</span>
+            <span class="value sm mono" id="contract-value">—</span>
+            <button type="button" class="btn" id="btn-copy-contract" style="margin-top:10px;font-size:.78rem;padding:8px 12px">Copy</button>
+          </article>
+        </div>
+
+        <article class="app-card" style="margin-top:14px">
+          <h2>On-chain registry</h2>
+          <p>Official alviKRON addresses on Base. Always cross-check on <a href="https://www.alvikron.com/verify/">alvikron.com/verify</a> before sending funds.</p>
+          <div style="overflow-x:auto;margin-top:12px">
+            <table class="registry-table">
+              <thead>
+                <tr><th>Role</th><th>Address</th><th>Explorer</th></tr>
+              </thead>
+              <tbody id="registry-body"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="app-grid cols-2" style="margin-top:14px">
+          <article class="app-card">
+            <h3>Fair launch only</h3>
+            <p>alviKRON has no presale or private sale. This dashboard is for holders — not an investor portal.</p>
+            <a class="btn block" href="https://www.alvikron.com/standard/" style="margin-top:10px">Fair Launch Standard</a>
+          </article>
+          <article class="app-card">
+            <h3>Token facts</h3>
+            <p>10B fixed supply · 80/10/5/5 · Base chain ID 8453 · Symbol AKRON</p>
+            <a class="btn block" href="https://basescan.org/token/0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12" target="_blank" rel="noopener" style="margin-top:10px">View on BaseScan</a>
+          </article>
+        </div>
+      </div>
+
+      <p id="status-msg" class="hidden" style="margin-top:14px;font-size:.85rem;color:#d1d5db" aria-live="polite"></p>
+
+      <p class="app-note" style="margin-top:14px">
+        High-risk memecoin. Balance display is read-only via public RPC. Not financial advice.
+      </p>
+    </main>
+
+    <nav class="app-nav" aria-label="App navigation">
+      <a href="/app/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1V9.5z"/></svg>
+        Home
+      </a>
+      <a href="/app/dashboard.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Dashboard
+      </a>
+      <a href="https://www.alvikron.com/verify/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Verify
+      </a>
+      <a href="https://www.alvikron.com/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        Website
+      </a>
+    </nav>
+  </div>
+
+  <script src="/assets/js/app-config.js"></script>
+  <script src="/assets/js/kron-data.js"></script>
+  <script src="/assets/js/app-core.js"></script>
+  <script src="/assets/js/app-dashboard.js"></script>
+</body>
+</html>

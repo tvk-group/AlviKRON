@@ -9,7 +9,7 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://mainnet.base.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" }
       ]
     },
     {
@@ -36,6 +36,12 @@
     { "src": "/verify/", "dest": "/verify/index.html" },
     { "src": "/program", "dest": "/program/index.html" },
     { "src": "/program/", "dest": "/program/index.html" },
+    { "src": "/app", "dest": "/app/index.html" },
+    { "src": "/app/", "dest": "/app/index.html" },
+    { "src": "/app/dashboard", "dest": "/app/dashboard.html" },
+    { "src": "/app/dashboard/", "dest": "/app/dashboard.html" },
+    { "src": "/app/manifest.webmanifest", "dest": "/app/manifest.webmanifest" },
+    { "src": "/app/sw.js", "dest": "/app/sw.js" },
     { "src": "/legal/(.*)", "dest": "/legal/$1" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "handle": "filesystem" },
