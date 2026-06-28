@@ -156,8 +156,101 @@
   }
 
   function registerServiceWorker() {
-    if (!('serviceWorker' in navigator)) return;
-    navigator.serviceWorker.register('/app/sw.js', { scope: '/app/' }).catch(function () {});
+    if (!('serviceWorker' in navigator)) return Promise.resolve();
+    return navigator.serviceWorker.register('/app/sw.js', { scope: '/app/' }).catch(function () {});
+  }
+
+  function isStandalone() {
+    return window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+  }
+
+  function isIosSafari() {
+    const ua = window.navigator.userAgent;
+    return /iPhone|iPad|iPod/i.test(ua) && /Safari/i.test(ua) && !/CriOS|FxiOS/i.test(ua);
+  }
+
+  /**
+   * Browser-native PWA install — captures beforeinstallprompt and surfaces UI.
+   */
+  function setupPwaInstall(options) {
+    options = options || {};
+    const banner = document.getElementById('install-banner');
+    const installBtn = document.getElementById('btn-install');
+    const dismissBtn = document.getElementById('btn-install-dismiss');
+    const fallback = document.getElementById('install-fallback');
+    let deferred = null;
+    let prompted = false;
+
+    function hideBanner() {
+      if (banner) banner.classList.add('hidden');
+      document.body.classList.remove('has-install-banner');
+    }
+
+    function showBanner() {
+      if (!banner || isStandalone()) return;
+      banner.classList.remove('hidden');
+      document.body.classList.add('has-install-banner');
+    }
+
+    async function triggerInstall() {
+      if (!deferred || isStandalone()) return false;
+      try {
+        await deferred.prompt();
+        const choice = await deferred.userChoice;
+        deferred = null;
+        prompted = true;
+        if (choice.outcome === 'accepted') {
+          hideBanner();
+          if (fallback) fallback.classList.add('hidden');
+          return true;
+        }
+      } catch (_) { /* browser blocked or unavailable */ }
+      return false;
+    }
+
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      deferred = e;
+      showBanner();
+      if (fallback) fallback.classList.add('hidden');
+      if (options.autoPrompt !== false && !prompted) {
+        window.setTimeout(function () {
+          triggerInstall();
+        }, options.autoDelay || 1200);
+      }
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', function () {
+        triggerInstall();
+      });
+    }
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', hideBanner);
+    }
+
+    window.addEventListener('appinstalled', function () {
+      hideBanner();
+      if (fallback) fallback.classList.add('hidden');
+      deferred = null;
+    });
+
+    registerServiceWorker().then(function () {
+      if (isStandalone()) {
+        hideBanner();
+        if (fallback) fallback.classList.add('hidden');
+        return;
+      }
+      window.setTimeout(function () {
+        if (!deferred && isIosSafari() && fallback) {
+          fallback.classList.remove('hidden');
+        }
+      }, options.fallbackDelay || 2500);
+    });
+
+    return { triggerInstall: triggerInstall, showBanner: showBanner };
   }
 
   window.ALVIKRON_APP_CORE = {
@@ -177,6 +270,8 @@
     onAccountsChanged,
     onChainChanged,
     addTokenToWallet,
-    registerServiceWorker
+    registerServiceWorker,
+    isStandalone,
+    setupPwaInstall
   };
 })();

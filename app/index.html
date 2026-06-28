@@ -6,19 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="alviKRON community holder app — connect your wallet on Base, view AKRON balance, and verify official addresses. Fair launch memecoin. No presale." />
   <meta name="theme-color" content="#020617" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="alviKRON" />
   <link rel="canonical" href="https://app.alvikron.com/" />
   <link rel="manifest" href="/app/manifest.webmanifest" />
   <link rel="icon" href="/assets/brand/icon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/assets/brand/icon-32.svg" type="image/svg+xml" sizes="32x32" />
   <link rel="apple-touch-icon" href="/assets/brand/icon-512.png" />
   <link rel="stylesheet" href="/assets/css/app.css" />
+  <script src="/assets/js/app-config.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/app/sw.js', { scope: '/app/' }).catch(function () {});
+    }
+  </script>
 </head>
 <body>
+  <div id="install-banner" class="install-banner hidden" role="region" aria-label="Install app">
+    <img class="install-banner-icon" src="/assets/brand/icon-512.png" alt="" width="44" height="44" />
+    <div class="install-banner-copy">
+      <strong>Install alviKRON</strong>
+      <span>Add to your home screen for quick access</span>
+    </div>
+    <div class="install-banner-actions">
+      <button type="button" class="btn primary" id="btn-install">Install</button>
+      <button type="button" class="install-banner-dismiss" id="btn-install-dismiss">Not now</button>
+    </div>
+  </div>
+
   <div class="app-shell">
     <header class="app-topbar">
       <a class="app-brand" href="/app/">
-        <img src="/assets/brand/icon.png" alt="" width="38" height="38" />
+        <img src="/assets/brand/icon-512.png" alt="alviKRON" width="40" height="40" />
         <span>alviKRON</span>
       </a>
       <div class="app-topbar-actions">
@@ -28,25 +48,41 @@
     </header>
 
     <main class="app-main">
-      <section class="app-hero">
-        <span class="pill">Community App · Fair Launch · Base</span>
-        <h1>Holder portal for alviKRON</h1>
-        <p>Connect your wallet on Base to view your AKRON balance, verify the official contract, and browse the on-chain registry — no presale, no KYC, no backend custody.</p>
-
-        <div class="journey" aria-label="Holder journey">
-          <div class="journey-step active"><div class="dot">1</div>Install</div>
-          <div class="journey-step"><div class="dot">2</div>Connect</div>
-          <div class="journey-step"><div class="dot">3</div>Dashboard</div>
-          <div class="journey-step"><div class="dot">4</div>Verify</div>
-          <div class="journey-step"><div class="dot">5</div>Hold</div>
+      <div class="app-stack">
+        <div class="app-hero-logo">
+          <img src="/assets/brand/icon-512.png" alt="alviKRON logo" width="96" height="96" />
+          <span class="wordmark">alviKRON</span>
         </div>
-      </section>
 
-      <div class="app-grid cols-2" style="margin-top:16px">
+        <section class="app-hero">
+          <span class="pill">Community App · Fair Launch · Base</span>
+          <h1>Holder portal</h1>
+          <p>Connect your wallet on Base to view AKRON balance and verify official addresses. No presale, no KYC, no custody.</p>
+
+          <nav class="journey" aria-label="Holder journey">
+            <div class="journey-step active"><span class="dot">1</span>Install app</div>
+            <div class="journey-step"><span class="dot">2</span>Connect wallet</div>
+            <div class="journey-step"><span class="dot">3</span>Open dashboard</div>
+            <div class="journey-step"><span class="dot">4</span>Verify contract</div>
+            <div class="journey-step"><span class="dot">5</span>Hold &amp; DYOR</div>
+          </nav>
+        </section>
+
+        <article class="app-card">
+          <h2>Install</h2>
+          <p>Your browser can install this portal as an app. When supported, the install prompt appears automatically at the top.</p>
+          <div class="app-actions">
+            <button type="button" class="btn primary block" id="btn-install-card">Install App</button>
+          </div>
+          <p id="install-fallback" class="install-fallback hidden">
+            On iPhone: Safari → Share → <strong>Add to Home Screen</strong>.
+          </p>
+        </article>
+
         <article class="app-card">
           <h2>Connect wallet</h2>
-          <p>Read-only balance check via Base RPC. Your keys stay in your wallet — we never custody funds.</p>
-          <div style="margin-top:14px;display:grid;gap:10px">
+          <p>Read-only balance via Base RPC. Keys stay in your wallet.</p>
+          <div class="app-actions">
             <button type="button" class="btn primary block" id="btn-connect">Connect Wallet</button>
             <button type="button" class="btn block hidden" id="btn-disconnect">Disconnect</button>
             <a class="btn block hidden" id="btn-dashboard" href="/app/dashboard.html">Open Dashboard →</a>
@@ -55,35 +91,24 @@
           <p id="status-msg" class="hidden" style="margin-top:12px;font-size:.85rem" aria-live="polite"></p>
         </article>
 
-        <article class="app-card" id="wallet-panel">
+        <article class="app-card">
           <h2>Official contract</h2>
-          <p class="mono" style="word-break:break-all;color:#fbcfe8">0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12</p>
+          <p class="mono" style="word-break:break-all;color:#fbcfe8;margin-top:8px">0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12</p>
           <p style="margin-top:8px">On-chain symbol: <strong>AKRON</strong> · Display: alviKRON</p>
-          <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
-            <a class="btn" href="https://basescan.org/token/0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12" target="_blank" rel="noopener">BaseScan</a>
-            <a class="btn" href="https://www.alvikron.com/verify/">Verify Registry</a>
+          <div class="app-actions">
+            <a class="btn block" href="https://basescan.org/token/0xC10C8e1a6223cCBF60a8884654733D6cf9DCBA12" target="_blank" rel="noopener">View on BaseScan</a>
+            <a class="btn block" href="https://www.alvikron.com/verify/">Verify Registry</a>
           </div>
         </article>
+
+        <p id="no-wallet-note" class="app-note hidden">
+          No browser wallet detected. Install MetaMask, Coinbase Wallet, or Rainbow, then return on Base.
+        </p>
+
+        <p class="app-note soft">
+          High-risk experimental memecoin. Informational only — not financial advice. Fair launch only; no presale portal.
+        </p>
       </div>
-
-      <article class="app-card" style="margin-top:14px">
-        <h2>Install on your phone</h2>
-        <p>Add this portal to your home screen — same pattern as entelekron.app and app.sovraprotocol.com.</p>
-        <div class="install-steps">
-          <div class="install-step"><strong>iPhone / iPad</strong> — Safari → app.alvikron.com → Share → Add to Home Screen</div>
-          <div class="install-step"><strong>Android</strong> — Chrome → app.alvikron.com → menu → Install app or Add to Home screen</div>
-          <div class="install-step"><strong>Desktop</strong> — Chrome or Edge → install icon in the address bar, or bookmark app.alvikron.com</div>
-        </div>
-        <button type="button" class="btn primary block hidden" id="btn-install" style="margin-top:12px">Install App</button>
-      </article>
-
-      <p id="no-wallet-note" class="app-note hidden">
-        No browser wallet detected. Install MetaMask, Coinbase Wallet, or Rainbow, then return here on Base network.
-      </p>
-
-      <p class="app-note" style="background:rgba(244,114,182,.08);border-color:rgba(244,114,182,.22);color:#fbcfe8">
-        alviKRON is a high-risk experimental memecoin. This app is informational only — not financial advice. Fair launch only; no presale portal.
-      </p>
     </main>
 
     <nav class="app-nav" aria-label="App navigation">
@@ -106,7 +131,6 @@
     </nav>
   </div>
 
-  <script src="/assets/js/app-config.js"></script>
   <script src="/assets/js/app-core.js"></script>
   <script src="/assets/js/app.js"></script>
 </body>

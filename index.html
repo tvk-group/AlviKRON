@@ -42,7 +42,7 @@
 
   <link rel="icon" href="/assets/brand/icon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/assets/brand/icon-32.svg" type="image/svg+xml" sizes="32x32" />
-  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/icon-512.png" />
   <link rel="preload" href="/assets/css/kron.css" as="style" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -132,7 +132,7 @@
   <div id="consent-gate" class="consent-gate" role="dialog" aria-modal="true" aria-labelledby="consent-title" aria-hidden="false">
     <div class="consent-panel">
       <div class="consent-brand">
-        <img class="brand-mark" src="/assets/brand/icon.png" alt="" width="40" height="40" decoding="async" />
+        <img class="brand-mark" src="/assets/brand/icon-512.png" alt="alviKRON" width="40" height="40" decoding="async" />
         <span>alviKRON</span>
       </div>
       <p class="consent-kicker" data-i18n="consent.kicker">Before you continue</p>
@@ -173,7 +173,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="/" aria-label="alviKRON home">
-        <img class="brand-mark" src="/assets/brand/icon.png" alt="" width="40" height="40" decoding="async" />
+        <img class="brand-mark" src="/assets/brand/icon-512.png" alt="alviKRON" width="40" height="40" decoding="async" />
         <span>alviKRON</span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
@@ -241,15 +241,19 @@
           </div>
         </div>
         <aside class="coin-card reveal" aria-label="alviKRON visual">
-          <span class="float-chip chip1" data-i18n="home.chipCreator">Creator Economy</span>
-          <span class="float-chip chip2" data-i18n="home.chipAlvina">ALVINA Inspired</span>
-          <span class="float-chip chip3" data-i18n="home.chipFair">Fair Launch</span>
-          <div class="coin-logo-wrap" aria-hidden="true">
-            <img class="coin-logo" src="/assets/logo.png" alt="" width="280" height="280" decoding="async" />
-          </div>
-          <div class="status-card">
-            <strong data-i18n="home.statusTitle">alviKRON V2 · BaseScan Verified</strong>
-            <p data-i18n="home.statusDesc">Official contract live on Base. Full address registry published on-chain and on the verification page.</p>
+          <div class="coin-card-inner">
+            <div class="coin-chips">
+              <span class="float-chip" data-i18n="home.chipCreator">Creator Economy</span>
+              <span class="float-chip" data-i18n="home.chipAlvina">ALVINA Inspired</span>
+              <span class="float-chip" data-i18n="home.chipFair">Fair Launch</span>
+            </div>
+            <div class="coin-logo-wrap">
+              <img class="coin-logo" src="/assets/brand/icon-512.png" alt="alviKRON logo" width="220" height="220" decoding="async" />
+            </div>
+            <div class="status-card">
+              <strong data-i18n="home.statusTitle">alviKRON V2 · BaseScan Verified</strong>
+              <p data-i18n="home.statusDesc">Official contract live on Base. Full address registry published on-chain and on the verification page.</p>
+            </div>
           </div>
         </aside>
       </div>
@@ -377,7 +381,7 @@
               <p data-i18n="home.appDesktopDesc">Chrome or Edge → install icon in the address bar, or bookmark app.alvikron.com</p>
             </article>
           </div>
-          <p class="section-text app-promo-note" data-i18n="home.appNote">Fair-launch holder portal only — no presale, no KYC, no investor dashboard. For infrastructure presales see entelekron.io and sovraprotocol.com.</p>
+          <p class="section-text app-promo-note" data-i18n="home.appNote">Fair-launch holder portal only — no presale, no KYC. Chrome/Edge users get a browser install prompt automatically when visiting the app.</p>
         </div>
       </div>
     </section>

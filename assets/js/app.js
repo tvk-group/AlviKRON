@@ -5,7 +5,6 @@
   'use strict';
 
   const core = window.ALVIKRON_APP_CORE;
-  const cfg = core.cfg;
 
   const els = {
     connectBtn: document.getElementById('btn-connect'),
@@ -13,12 +12,10 @@
     dashboardBtn: document.getElementById('btn-dashboard'),
     addTokenBtn: document.getElementById('btn-add-token'),
     walletChip: document.getElementById('wallet-chip'),
-    walletPanel: document.getElementById('wallet-panel'),
     noWallet: document.getElementById('no-wallet-note'),
     statusMsg: document.getElementById('status-msg'),
-    journey: document.querySelectorAll('.journey-step'),
-    installBtn: document.getElementById('btn-install')
-  };
+    installBtn: document.getElementById('btn-install'),
+    installCardBtn: document.getElementById('btn-install-card'),
 
   function setStatus(msg, isError) {
     if (!els.statusMsg) return;
@@ -41,12 +38,12 @@
       els.walletChip.textContent = connected ? core.shortAddr(addr) : '—';
       els.walletChip.classList.toggle('hidden', !connected);
     }
-    if (els.walletPanel) els.walletPanel.classList.toggle('hidden', !connected);
     if (els.connectBtn) els.connectBtn.classList.toggle('hidden', connected);
     if (els.disconnectBtn) els.disconnectBtn.classList.toggle('hidden', !connected);
     if (els.dashboardBtn) els.dashboardBtn.classList.toggle('hidden', !connected);
     if (els.noWallet) els.noWallet.classList.toggle('hidden', core.hasWallet());
-    setJourney(connected ? 2 : core.hasWallet() ? 1 : 0);
+    const installDone = core.isStandalone();
+    setJourney(connected ? 3 : core.hasWallet() ? 2 : installDone ? 1 : 0);
   }
 
   async function handleConnect() {
@@ -58,7 +55,7 @@
     try {
       const addr = await core.connectWallet();
       updateWalletUI(addr);
-      setStatus('Wallet connected on Base. Open your dashboard to view AKRON balance.');
+      setStatus('Wallet connected on Base. Opening dashboard…');
       window.location.href = '/app/dashboard.html';
     } catch (err) {
       const code = err && err.message;
@@ -84,31 +81,13 @@
     setStatus('Wallet disconnected.');
   }
 
-  function setupInstallPrompt() {
-    let deferred;
-    window.addEventListener('beforeinstallprompt', function (e) {
-      e.preventDefault();
-      deferred = e;
-      if (els.installBtn) els.installBtn.classList.remove('hidden');
-    });
-    if (els.installBtn) {
-      els.installBtn.addEventListener('click', async function () {
-        if (!deferred) return;
-        deferred.prompt();
-        await deferred.userChoice;
-        deferred = null;
-        els.installBtn.classList.add('hidden');
-      });
-    }
-  }
-
   function bindEvents() {
     if (els.connectBtn) els.connectBtn.addEventListener('click', handleConnect);
     if (els.disconnectBtn) els.disconnectBtn.addEventListener('click', handleDisconnect);
     if (els.addTokenBtn) {
       els.addTokenBtn.addEventListener('click', function () {
         core.addTokenToWallet().catch(function () {
-          setStatus('Could not add token — open your wallet manually with the official contract.', true);
+          setStatus('Could not add token — use the official contract in your wallet.', true);
         });
       });
     }
@@ -123,12 +102,15 @@
   }
 
   function init() {
-    core.registerServiceWorker();
-    setupInstallPrompt();
+    const pwa = core.setupPwaInstall({ autoPrompt: true, autoDelay: 1000 });
+    if (els.installCardBtn && pwa) {
+      els.installCardBtn.addEventListener('click', function () {
+        pwa.triggerInstall();
+      });
+    }
     bindEvents();
     const saved = core.loadSavedWallet();
     updateWalletUI(saved);
-    if (saved) setJourney(2);
   }
 
   if (document.readyState === 'loading') {
